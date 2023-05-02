@@ -42,7 +42,7 @@ function typeWriter() {
       
   };
 
-  GitHubCalendar(".calendar", "ShradhaVastrakar", {
+  GitHubCalendar(".calendar", "MSaifKhan01", {
     responsive: true,
     global_stats: false,
     tooltips: true,
