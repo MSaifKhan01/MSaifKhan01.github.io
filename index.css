@@ -20,10 +20,11 @@ body{
     max-width: 100%;
     z-index: 3;
   }
-  #resume-link-1 {
+  #resume-button-1 {
     border-radius: 7px;
     /* padding: 5px; */
     border: 2px solid white;
+    padding: 10px;
   }
   .nav-colored {
     background-color:  #340B26;
@@ -97,7 +98,7 @@ body{
     margin: 5% 0%;
   }
   
-  #resume-link-2{
+  #resume-button-2{
     background-color: white;
     font-weight: bolder;
     font-size: larger;
@@ -107,7 +108,7 @@ body{
     color: #010234;
   }
   
-  #resume-link-2:hover,#resume-link-1:hover {
+  #resume-button-2:hover,#resume-button-1:hover {
     background-color: black;
     border-radius: 7px;
     color: white;
@@ -134,7 +135,7 @@ body{
    margin-bottom: 16%;
   }
   
-  #resume-button-2{
+  #aboutflex{
    display: flex;
    justify-content: space-around;
    margin-top: 5%;
@@ -366,7 +367,7 @@ margin-bottom: 10px;
   .openbtn{
     display: block;
   }
-  #resume-link-1{
+  #resume-button-1{
   border: none;
   color: #080947;
   background-color: white;
