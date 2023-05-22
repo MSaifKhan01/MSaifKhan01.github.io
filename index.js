@@ -50,13 +50,17 @@ function typeWriter() {
 
 
 
-  document.getElementById("resume-button-1").onclick=()=>{
-window.open("./images/Saif_Khan_Resume.pdf");
-  }
+//   document.getElementById("resume-button-1").onclick=()=>{
+// window.open("./images/Saif_Khan_Resume.pdf");
+//   }
 
-  document.getElementById("resume-button-2").onclick=()=>{
-    window.open("./images/Saif_Khan_Resume.pdf");
-  }
+//   document.getElementById("resume-button-2").onclick=()=>{
+//     window.open("./images/Saif_Khan_Resume.pdf");
+//   }
+var runDownload=function(){
+ var D1= window.open("./images/Saif_Khan_Resume.pdf");
+ D1.location;
+}
      
   
 
