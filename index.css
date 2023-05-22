@@ -204,11 +204,11 @@ body{
     font-size: 30px;
   }
   
-  .techstack{
+  .project-tech-stack{
     display: flex;
   }
   
-  .project-tech-stack{
+  .techstack{
   color: white;
   
   }
