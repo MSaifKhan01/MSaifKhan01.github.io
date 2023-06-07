@@ -1,78 +1,74 @@
-let i=0;
-let txt="NodeJS Backend Developer.";
-let speed=85;
-
-typeWriter()
-
-function typeWriter() {
-    if(i < txt.length){
-      document.getElementById("user-detail-name").style.color="white";
-      document.getElementById("demo1").innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    }
-    else {
-      // reset the index when it reaches the end of the text
-      i = 0;
-      // clear the text
-      document.getElementById("demo1").innerHTML = "";
-      // make the recursive call
-      document.getElementById("user-detail-name").style.color="#f51cb3";
-      setTimeout(typeWriter, speed);
-    }
-  }
-
-  
-  var myNav = document.getElementById('nav-menu');
-  var myNav2 = document.getElementById('main');
-  window.onscroll = function () { 
-      if ( document.documentElement.scrollTop >= 15 ) {
-          myNav.classList.add("nav-colored");
-          myNav2.classList.add("nav-colored");
-          // myNav.classList.remove("nav-transparent");
-
-
-      } 
-      else {
-          // myNav.classList.add("nav-transparent");
-          myNav.classList.remove("nav-colored");
-          myNav2.classList.remove("nav-colored");
+$(document).ready(function(){
+  $(window).scroll(function(){
+      if(this.scrollY > 20){
+          $('#main-nav').addClass("sticky");
+      }else{
+          $('#main-nav').removeClass("sticky");
       }
-
       
-  };
+  })
 
-  GitHubCalendar(".calendar", "MSaifKhan01", {
-    responsive: true,
-    global_stats: false,
-    tooltips: true,
+  // togel/menu nevbar script
+  $('.menu-btn').click(function(){
+      $('#main-nav .menu').toggleClass("active");
+      $('.menu-btn i').toggleClass("active");
   });
 
+  $('.menu li a').click(function(){
+      $('#main-nav .menu').toggleClass("active");
+      $('.menu-btn i').toggleClass("active");
+  });
+
+  //   typing animation script 
+     var typed = new Typed (".panku",{
+      strings:["Full-Stack Web-Developer", "Node-js Backend Devloper"],
+      typeSpeed:100,
+      backSpeed:60,
+      loop:true
+     })
 
 
-  document.getElementById("resume-button-1").onclick=()=>{
-window.open("./images/Saif_Khan_Resume.pdf");
-  }
+     var typed = new Typed (".panku2",{
+      strings:["Full-Stack Web-Developer", "Node-js Backend Devloper"],
+      typeSpeed:100,
+      backSpeed:60,
+      loop:true
+     });
 
-  document.getElementById("resume-button-2").onclick=()=>{
-    window.open("./images/Saif_Khan_Resume.pdf");
-  }
-// var runDownload=function(){
-//  var D1= window.open("./images/Saif_Khan_Resume.pdf");
-//  D1.location;
-// }
-     
-  
+  // owl carousel script
+  $('.carousel').owlCarousel({
+       margin:20,
+       loop:true,
+       autoplayTimeOut:2000,
+       autoplayHoverPause:true,
+       responsive:{
+          0:{
+              items:1,
+              nav:false
+          },
+          600:{
+              items:2,
+              nav:false
+          },
+          1000:{
+              items:3,
+              nav:false
+          }
+       }
+  })
 
+});
 
+// resume section 
 
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.display = "none";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.display= "block";
-  }
-  
+document.getElementById("resume-link-1").onclick = () => {
+  window.open(
+    "./Saif_Khan_Resume.pdf"
+  );
+};
+
+document.getElementById("resume-link-2").onclick = () => {
+  window.open(
+    "./Saif_Khan_Resume.pdf"
+  );
+};
