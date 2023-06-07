@@ -32,7 +32,7 @@ html{
 }
 #main-nav.sticky{
     padding: 15px 0;
-    background-color:#96cc0d;
+    background-color:blue;
 
 }
 #main-nav .max-width{
@@ -44,7 +44,7 @@ html{
 
 }
 #user-detail-name{
-    text-shadow: 0 0 15px #96cc0d, 0 0 25px #96cc0d;
+    text-shadow: 0 0 15px blue, 0 0 25px blue;
     animation: animate 1.5s linear infinite;
 }
 @keyframes animate {
@@ -101,7 +101,7 @@ html{
 #main-nav .menu li a:hover{ 
       font-variation-settings: "wght" 582; 
       letter-spacing: 2px;
-      border-bottom: 2px solid #96cc0d;
+      border-bottom: 2px solid blue;
       
       
 
@@ -126,7 +126,7 @@ html{
 
 .home{
     display: flex;
-    background: url("https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y29kZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60") no-repeat ;
+    background: url("./portimage/portfolio_img.jpg") no-repeat ;
     background-size: cover;
     height: 100vh;
     color:#fff;
@@ -172,7 +172,7 @@ html{
 }
 .home .home-content a:hover{
     color:  rgb(248, 249, 250);
-    box-shadow: 0 0 5px #96cc0d, 0 0 25px #35c00b, 0 0 50px #96cc0d, 0 0 200px #96cc0d; 
+    box-shadow: 0 0 5px blue, 0 0 25px blue, 0 0 50px blue, 0 0 200px blue; 
 }
 
 /* all section similer section*/
@@ -215,7 +215,7 @@ section .title::before{
 }
 section .title::after{
    
-    color: #96cc0d;
+    color: blue;
     position: absolute;
     bottom: -12px;
     left: 50%;
@@ -255,7 +255,7 @@ section .title::after{
     margin-bottom: 10px;
 }
 .about .about-content .right .text span{
-    color:#96cc0d;
+    color:blue;
 }
 .about .about-content .right p{
     text-align: justify;
@@ -264,14 +264,14 @@ section .title::after{
 }
 .about .about-content .right a{
     display: inline-block;
-    background: #96cc0d;
+    background: blue;
     color:  aliceblue;
     font-size: 20px;
     font-weight: 400;
     padding: 10px 30px;
   
     border-radius: 6px;
-    border: 2px solid#96cc0d;
+    border: 2px solid blue;
     transition: all 0.4 ease;
 }
 .about .about-content .right button{
@@ -280,7 +280,7 @@ section .title::after{
 }
 .about .about-content .right a:hover{
     background: transparent;
-    color: #96cc0d;
+    color: blue;
     background:  aliceblue;
 }
 
@@ -345,7 +345,7 @@ section .title::after{
     transform: translateY(-8px);
     cursor: pointer;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    background-color:#96cc0d;
+    background-color:blue;
 }
 
 /* projects section starts */
@@ -363,7 +363,7 @@ section .title::after{
 
 .projects .carousel .project-card{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    background-color: #4c3d47;
+    background-color: #06d0fd;
     color: #fff;
     /* text-align: justify; */
   border-radius: 6px;
@@ -378,7 +378,7 @@ section .title::after{
     height: 600px;
 }
 .projects .carousel .project-card:hover{
-    background: #96cc0d;
+    background: blue;
 }
 .projects .carousel .project-card:hover .box{
    transform: scale(1.05);
@@ -403,7 +403,7 @@ section .title::after{
     width: 90%px;
     object-fit: cover;
     
-    border: 5px solid #96cc0d;
+    border: 5px solid blue;
     transition: all 0.3s ease;
 }
 
@@ -422,7 +422,7 @@ section .title::after{
     margin: 0 5px;
     outline: none! important;
     border-radius: 50%;
-    border: 2px solid #96cc0d! important;
+    border: 2px solid blue! important;
     transition: all 0.3s ease
 
 }
@@ -434,7 +434,7 @@ section .title::after{
 .owl-dot.active,
 
 .owl-dot.active{
-   background-color: #96cc0d! important;
+   background-color: blue! important;
 }
 
 
@@ -476,7 +476,7 @@ section .title::after{
 .cal{
     margin-top: 5%;
     margin-bottom: 7%;
-    border: 2px #96cc0d;
+    border: 2px blue;
 }
 
 /* contect sectin css start hare */
@@ -519,7 +519,7 @@ section .title::after{
  }
  .contact .contact-content .row i{
      font-size :25px;
-     color: #96cc0d;
+     color: blue;
      transition: all 0.5s ease
  
  }
@@ -565,7 +565,7 @@ section .title::after{
  .contact .right form .textarea textarea{
      height: 100%;
      width: 100%;
-     border: 1px solid #96cc0d;
+     border: 1px solid blue;
      border-radius: 6px;
      outline: none;
      padding: 0 15px;
@@ -584,8 +584,8 @@ section .title::after{
  .contact .right form .button button{
     height: 100%;
     width: 100%;
-    border: 2px solid #96cc0d;
-    background: #96cc0d;
+    border: 2px solid blue;
+    background: blue;
     color: #fff;
     font-size: 20px;
     font-weight: 500;
@@ -595,7 +595,7 @@ section .title::after{
  }
 
  .contact .right form .button button:hover{
-    color: #96cc0d;
+    color: blue;
     background: none;
  }
 
@@ -617,7 +617,7 @@ section .title::after{
     padding: 10px;
     border-radius: 8px;
     font-size: 15px;
-    background-color: #96cc0d;
+    background-color: blue;
     color: #fff;
 }
 
@@ -682,7 +682,7 @@ section .title::after{
         
     }
     #main-nav.sticky .menu li a:hover{
-        color:#96cc0d;
+        color:blue;
         transition: color 0.3s;
         
      }
@@ -775,7 +775,7 @@ section .title::after{
 
      }
      #main-nav.sticky .menu li a:hover{
-        color:#96cc0d;
+        color:blue;
         transition: color 0.3s;
         
      }
@@ -790,7 +790,7 @@ section .title::after{
         font-size: 23px;
      }
      #resume-button-1:hover{
-        color:#96cc0d;
+        color:blue;
         transition: color 0.3s;
      }
     
@@ -818,7 +818,7 @@ section .title::after{
        
     }
     #main-nav.sticky .menu li a:hover{
-        color:#96cc0d;
+        color:blue;
         transition: color 0.3s;
         
      }
@@ -840,7 +840,7 @@ section .title::after{
     
     }
     #main-nav.sticky .menu li a:hover{
-        color:#96cc0d;
+        color: blue;
         transition: color 0.3s;
         
      }
