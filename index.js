@@ -63,12 +63,12 @@ $(document).ready(function(){
 
 document.getElementById("resume-link-1").onclick = () => {
   window.open(
-    "./Saif_Khan_Resume.pdf"
+    "./Mohd Saif Khan-Resume.pdf"
   );
 };
 
 document.getElementById("resume-link-2").onclick = () => {
   window.open(
-    "./Saif_Khan_Resume.pdf"
+    "./Mohd Saif Khan-Resume.pdf"
   );
 };
