@@ -1,54 +1,3 @@
-// const express = require("express");
-// const nodemailer = require("nodemailer");
-// const bodyParser = require("body-parser");
-// const cors = require("cors");
-// require("dotenv").config();
-
-// const app = express();
-// app.use(cors());
-// app.use(bodyParser.json());
-
-// // POST /send-email
-// app.post("/send-email", async (req, res) => {
-//   const { name, email, subject, message } = req.body;
-
-//   if (!email || !message) {
-//     return res.status(400).json({ message: "Email and message are required." });
-//   }
-
-//   try {
-//     // Transporter setup for Gmail
-//     let transporter = nodemailer.createTransport({
-//       service: "gmail",
-//       auth: {
-//         user: process.env.EMAIL_USER,
-//         pass: process.env.EMAIL_PASS,
-//       },
-//     });
-
-//     // Email options
-//     let mailOptions = {
-//       from: email,
-//       to: process.env.EMAIL_USER, // your inbox
-//       subject: subject || "No Subject",
-//       text: `
-      
-//       Name: ${name || "Not provided"}
-//       Email: ${email}
-//       Message: ${message}
-//       `,
-//     };
-
-//     await transporter.sendMail(mailOptions);
-//     res.json({ message: "Message sent successfully!" });
-//   } catch (error) {
-//     console.error("Error:", error);
-//     res.status(500).json({ message: "Failed to send message." });
-//   }
-// });
-
-// app.listen(5000, () => console.log("Server running on http://localhost:5000"));
-
 
 
 
@@ -60,7 +9,13 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+
+// ✅ Allow only your GitHub Pages frontend
+app.use(cors({
+  origin: "https://msaifkhan01.github.io",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(bodyParser.json());
 
 // POST /send-email
