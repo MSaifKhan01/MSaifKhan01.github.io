@@ -54,18 +54,20 @@ app.post("/send-email", async (req, res) => {
     //     pass: process.env.EMAIL_PASS,
     //   },
     // });
-    let transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+const transporter = nodemailer.createTransport({
+  host:"smtp.gmail.com",
+//   host: "smtp.privateemail.com",
   port: 587,
   secure: false,
+  requireTLS: true,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS // app-password if 2FA enabled
+    user: process.env.EMAIL_USER, 
+    pass: process.env.EMAIL_PASS, 
+ 
   },
-  tls: { ciphers: "SSLv3", rejectUnauthorized: true },
-  connectionTimeout: 15000,
-  logger: true,
-  debug: true
+    tls: {
+    rejectUnauthorized: false // Bypass SSL certificate validation
+  }
 });
 
 
