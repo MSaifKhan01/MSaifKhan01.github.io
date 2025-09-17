@@ -536,7 +536,7 @@
             color: white;
         }
 
-        /* Project Cards - FIXED HEIGHTS */
+        /* Project Cards */
         .project-card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -544,8 +544,9 @@
             padding: 25px;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            gap: 15px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
         }
 
         /* Avoid vertical jump while hovering */
@@ -570,48 +571,13 @@
             font-weight: 700;
             font-size: 1.3rem;
             color: var(--text-primary);
-            margin: 15px 0 10px;
-        }
-
-        .project-desc-container {
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 15px;
         }
 
         .project-desc {
             font-size: 1rem;
             color: var(--text-secondary);
             line-height: 1.6;
-            margin: 0;
-            transition: max-height 0.3s ease;
-        }
-
-        .project-desc.truncated {
-            max-height: 4.8em; /* 3 lines of text (1.6 line-height * 3) */
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-        }
-
-        .project-see-more {
-            color: var(--accent);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-align: left;
-            padding: 0;
-            margin-top: 5px;
-            display: inline-block;
-        }
-
-        .project-see-more:hover {
-            color: var(--secondary);
-            text-decoration: underline;
+            flex-grow: 1;
         }
 
         .project-techs {
@@ -631,7 +597,7 @@
         }
 
         .project-links {
-            margin-top: auto;
+            margin-top: 15px;
             display: flex;
             gap: 15px;
         }
@@ -887,19 +853,12 @@
             padding: 30px;
         }
 
-        .contact-form label {
-            display: block;
-            margin-bottom: 20px;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
         .contact-form input,
         .contact-form textarea {
             width: 100%;
             font-family: inherit;
             font-size: 1rem;
-            margin-top: 8px;
+            margin-bottom: 20px;
             padding: 15px;
             border-radius: 10px;
             border: 2px solid var(--border-color);
@@ -941,137 +900,6 @@
             padding: 40px 0 20px 0;
             margin-top: 60px;
             border-top: 1px solid var(--border-color);
-        }
-
-        /* Modal Styles - IMPROVED */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            position: relative;
-            transform: translateY(30px) scale(0.95);
-            transition: all 0.3s ease;
-        }
-
-        .modal-overlay.active .modal {
-            transform: translateY(0) scale(1);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: color 0.3s ease;
-            z-index: 1;
-        }
-
-        .modal-close:hover {
-            color: var(--accent);
-        }
-
-        .modal-icon {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-
-        .modal-title {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 15px;
-        }
-
-        .modal-message {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .modal-timer {
-            font-size: 1.2rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin: 20px 0;
-        }
-
-        .modal-progress {
-            height: 6px;
-            background: var(--border-color);
-            border-radius: 3px;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-
-        .modal-progress-bar {
-            height: 100%;
-            background: var(--accent);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .modal-btn {
-            padding: 10px 20px;
-            border-radius: 30px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .modal-btn.primary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .modal-btn.primary:hover {
-            background: var(--secondary);
-        }
-
-        .modal-btn.secondary {
-            background: transparent;
-            color: var(--secondary);
-            border: 1px solid var(--secondary);
-        }
-
-        .modal-btn.secondary:hover {
-            background: var(--secondary);
-            color: white;
         }
 
         /* Responsive tweaks */
@@ -1146,15 +974,6 @@
                 position: static;
                 transform: none;
             }
-
-            /* Modal responsive */
-            .modal {
-                padding: 20px;
-            }
-
-            .modal-actions {
-                flex-direction: column;
-            }
         }
 
         /* Smooth scroll */
@@ -1205,24 +1024,6 @@
         <i class='bx bx-chevron-up'></i>
     </div>
 
-    <!-- Modal for Form Submission -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal">
-            <button class="modal-close" id="modalClose"><i class='bx bx-x'></i></button>
-            <div class="modal-icon"><i class='bx bx-time' id="modalIcon"></i></div>
-            <h3 class="modal-title" id="modalTitle">Sending Your Message</h3>
-            <p class="modal-message" id="modalMessage">Please wait while we process your request. This may take up to 2 minutes as we're using a free hosting server.</p>
-            <div class="modal-timer" id="modalTimer">Time elapsed: 0s</div>
-            <div class="modal-progress">
-                <div class="modal-progress-bar" id="modalProgress"></div>
-            </div>
-            <div class="modal-actions" id="modalActions">
-                <button class="modal-btn primary" id="modalOkBtn" style="display: none;">OK</button>
-                <button class="modal-btn secondary" id="modalCancelBtn">Cancel</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Navbar -->
     <nav>
         <div class="navbar">
@@ -1265,7 +1066,7 @@
                     class='bx bxl-linkedin-square'></i></a>
             <a href="https://github.com/MSaifKhan01" target="_blank"><i class='bx bxl-github'></i></a>
             <a href="mailto:msaifkhan5038@gmail.com"><i class='bx bx-envelope'></i></a>
-            <!-- <a href="tel:+919315718415"><i class='bx bx-phone'></i></a> -->
+            <a href="tel:+919315718415"><i class='bx bx-phone'></i></a>
         </div>
     </section>
 
@@ -1395,7 +1196,7 @@
                     </div>
                     <div class="info-row"><i class="bx bxl-github"></i>
                         <div><span class="info-label">GitHub:</span><span class="info-value"><a
-                                    href="https://github.com/MSaifKhan01" target="_blank">MSaifKhan01</a></span></div>
+                                    href="https://github.com/MSaifKhan01" target="_blank">@MSaifKhan01</a></span></div>
                     </div>
                 </div>
 
@@ -1638,95 +1439,9 @@
             }
         ];
 
-        // Modal functionality
-        const modalOverlay = document.getElementById('modalOverlay');
-        const modalClose = document.getElementById('modalClose');
-        const modalIcon = document.getElementById('modalIcon');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalMessage = document.getElementById('modalMessage');
-        const modalTimer = document.getElementById('modalTimer');
-        const modalProgress = document.getElementById('modalProgress');
-        const modalOkBtn = document.getElementById('modalOkBtn');
-        const modalCancelBtn = document.getElementById('modalCancelBtn');
-        const modalActions = document.getElementById('modalActions');
-
-        let timerInterval;
-        let secondsElapsed = 0;
-        const maxWaitTime = 120; // 2 minutes
-        let autoCloseTimeout;
-
-        function showModal() {
-            modalOverlay.classList.add('active');
-            secondsElapsed = 0;
-            modalTimer.textContent = `Time elapsed: 0s`;
-            modalProgress.style.width = '0%';
-            modalIcon.className = 'bx bx-time';
-            modalTitle.textContent = 'Sending Your Message';
-            // modalMessage.textContent = 'Please wait while we process your request. This may take up to 2 minutes as we\'re using a free hosting server. Thats why it taks time ';
-
-            modalMessage.textContent = "Please wait while we process your request. This may take up to 2 minutes because we are using a free hosting server, which is why it takes longer.";
-
-            modalOkBtn.style.display = 'none';
-            modalCancelBtn.style.display = 'block';
-            
-            // Start timer
-            clearInterval(timerInterval);
-            timerInterval = setInterval(updateTimer, 1000);
-        }
-
-        function hideModal() {
-            modalOverlay.classList.remove('active');
-            clearInterval(timerInterval);
-            clearTimeout(autoCloseTimeout);
-        }
-
-        function updateTimer() {
-            secondsElapsed++;
-            modalTimer.textContent = `Time elapsed: ${secondsElapsed}s`;
-            const progressPercent = (secondsElapsed / maxWaitTime) * 100;
-            modalProgress.style.width = `${Math.min(progressPercent, 100)}%`;
-            
-            if (secondsElapsed >= maxWaitTime) {
-                clearInterval(timerInterval);
-                modalIcon.className = 'bx bx-error';
-                modalTitle.textContent = 'Server Timeout';
-                modalMessage.textContent = 'The server is taking longer than expected to respond. Please try again in a few moments.';
-                modalOkBtn.style.display = 'block';
-                modalCancelBtn.style.display = 'none';
-            }
-        }
-
-        function showSuccessModal(message) {
-            clearInterval(timerInterval);
-            modalIcon.className = 'bx bx-check-circle';
-            modalTitle.textContent = 'Message Sent Successfully!';
-            modalMessage.textContent = message;
-            modalProgress.style.width = '100%';
-            modalOkBtn.style.display = 'block';
-            modalCancelBtn.style.display = 'none';
-            
-            // Auto close after 3 seconds
-            autoCloseTimeout = setTimeout(hideModal, 3000);
-        }
-
-        function showErrorModal(message) {
-            clearInterval(timerInterval);
-            modalIcon.className = 'bx bx-error';
-            modalTitle.textContent = 'Error Sending Message';
-            modalMessage.textContent = message;
-            modalOkBtn.style.display = 'block';
-            modalCancelBtn.style.display = 'none';
-            
-            // Auto close after 5 seconds
-            autoCloseTimeout = setTimeout(hideModal, 5000);
-        }
-
-        // Event listeners for modal
-        modalClose.addEventListener('click', hideModal);
-        modalOkBtn.addEventListener('click', hideModal);
-        modalCancelBtn.addEventListener('click', hideModal);
-
         // Function to generate timeline entries
+
+
         function generateTimelineEntries(data, containerId) {
             const container = document.getElementById(containerId);
             container.innerHTML = '';
@@ -1762,104 +1477,34 @@
                 container.appendChild(entry);
             });
         }
-        
-        // // Function to generate project cards
-        // function generateProjectCards() {
-        //     const carousel = document.getElementById('projects-carousel');
-        //     carousel.innerHTML = '';
-
-        //     projectsData.forEach(project => {
-        //         const item = document.createElement('div');
-        //         item.className = 'item';
-
-        //         item.innerHTML = `
-        //   <div class="project-card">
-        //     <img src="${project.image}" alt="${project.title}" />
-        //     <div class="project-title">${project.title}</div>
-        //     <div class="project-desc-container">
-        //       <div class="project-desc truncated">${project.description}</div>
-        //          <button class="project-see-more">See More</button>
-        //     </div>
-     
-        //     <div class="project-techs">
-        //       ${project.technologies.map(tech => `<span class="project-tech">${tech}</span>`).join('')}
-        //     </div>
-        //     <div class="project-links">
-        //       ${project.links.map(link =>
-        //             `<a href="${link.href}" target="_blank"><i class="bx ${link.icon}"></i>${link.text}</a>`
-        //         ).join('')}
-        //     </div>
-        //   </div>
-        // `;
-
-        //         carousel.appendChild(item);
-        //     });
-
-        //     // Add event listeners for "See More" buttons
-        //     document.querySelectorAll('.project-see-more').forEach(button => {
-        //         button.addEventListener('click', function() {
-        //             const desc = this.previousElementSibling.querySelector('.project-desc');
-        //             desc.classList.toggle('truncated');
-        //             this.textContent = desc.classList.contains('truncated') ? 'See More' : 'See Less';
-                    
-        //             // Force carousel refresh to handle height changes
-        //             if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
-        //                 $('.owl-carousel').trigger('refresh.owl.carousel');
-        //             }
-        //         });
-        //     });
-        // }
-
+        // Function to generate project cards
         function generateProjectCards() {
-  const carousel = document.getElementById('projects-carousel');
-  carousel.innerHTML = '';
+            const carousel = document.getElementById('projects-carousel');
+            carousel.innerHTML = '';
 
-  projectsData.forEach(project => {
-    const item = document.createElement('div');
-    item.className = 'item';
+            projectsData.forEach(project => {
+                const item = document.createElement('div');
+                item.className = 'item';
 
-    item.innerHTML = `
-      <div class="project-card">
-        <img src="${project.image}" alt="${project.title}" />
-        <div class="project-title">${project.title}</div>
+                item.innerHTML = `
+          <div class="project-card">
+            <img src="${project.image}" alt="${project.title}" />
+            <div class="project-title">${project.title}</div>
+            <div class="project-desc">${project.description}</div>
+            <div class="project-techs">
+              ${project.technologies.map(tech => `<span class="project-tech">${tech}</span>`).join('')}
+            </div>
+            <div class="project-links">
+              ${project.links.map(link =>
+                    `<a href="${link.href}" target="_blank"><i class="bx ${link.icon}"></i>${link.text}</a>`
+                ).join('')}
+            </div>
+          </div>
+        `;
 
-        <div class="project-desc-container">
-          <div class="project-desc truncated">${project.description}</div>
-          <button class="project-see-more" type="button">See More</button>
-        </div>
-
-        <div class="project-techs">
-          ${project.technologies.map(tech => `<span class="project-tech">${tech}</span>`).join('')}
-        </div>
-
-        <div class="project-links">
-          ${project.links.map(link =>
-            `<a href="${link.href}" target="_blank" rel="noopener noreferrer"><i class="bx ${link.icon}"></i>${link.text}</a>`
-          ).join('')}
-        </div>
-      </div>
-    `;
-    carousel.appendChild(item);
-  });
-
-  // Event delegation: attach one listener to the carousel container
-  carousel.addEventListener('click', function (e) {
-    const btn = e.target.closest('.project-see-more');
-    if (!btn) return;
-
-    const container = btn.closest('.project-desc-container');
-    const desc = container && container.querySelector('.project-desc');
-    if (!desc) return;
-
-    desc.classList.toggle('truncated');
-    btn.textContent = desc.classList.contains('truncated') ? 'See More' : 'See Less';
-
-    // Refresh Owl carousel only if you're actually using it on this element
-    if (typeof $ !== 'undefined' && $.fn && $.fn.owlCarousel) {
-      $('#projects-carousel').trigger('refresh.owl.carousel');
-    }
-  });
-}
+                carousel.appendChild(item);
+            });
+        }
 
         // Theme Toggle Function
         function toggleTheme() {
@@ -2037,9 +1682,6 @@
         const form = document.getElementById("contactForm");
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            
-            // Show the modal
-            showModal();
 
             const formData = {
                 name: form.name.value,
@@ -2047,25 +1689,23 @@
                 subject: form.subject.value,
                 message: form.message.value
             };
-            
 
             try {
                 const res = await fetch("https://msaifkhan01-github-io.onrender.com/send-email", {
-                //    const res = await fetch("http://localhost:5000/send-email", {
-                method: "POST",
+                    method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(formData)
                 });
 
                 const data = await res.json();
                 if (res.ok) {
-                    showSuccessModal(data.message);
+                    showToast(data.message, "success");
                     form.reset();
                 } else {
-                    showErrorModal(data.message);
+                    showToast(data.message, "error");
                 }
             } catch (err) {
-                showErrorModal("Error sending message! Please try again later.");
+                showToast("Error sending message!", "error");
             }
         });
 
