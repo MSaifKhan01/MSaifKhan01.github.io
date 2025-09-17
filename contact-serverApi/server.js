@@ -47,13 +47,27 @@ app.post("/send-email", async (req, res) => {
 
   try {
     // Transporter setup for Gmail
+    // let transporter = nodemailer.createTransport({
+    //   service: "gmail",
+    //   auth: {
+    //     user: process.env.EMAIL_USER,
+    //     pass: process.env.EMAIL_PASS,
+    //   },
+    // });
     let transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS // app-password if 2FA enabled
+  },
+  tls: { ciphers: "SSLv3", rejectUnauthorized: true },
+  connectionTimeout: 15000,
+  logger: true,
+  debug: true
+});
+
 
     // Email options - send from the user's email
     // let mailOptions = {
