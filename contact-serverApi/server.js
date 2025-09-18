@@ -323,13 +323,12 @@
 
 
 
-// index.js
-import express from "express";
-import cors from "cors";
-import sgMail from "@sendgrid/mail";
-import dotenv from "dotenv";
 
-dotenv.config();
+const express = require("express");
+const sgMail = require("@sendgrid/mail");
+const cors = require("cors");
+require("dotenv").config();  // this alone is enough
+
 const app = express();
 app.use(cors());
 app.use(express.json());
