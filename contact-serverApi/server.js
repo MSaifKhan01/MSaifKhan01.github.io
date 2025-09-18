@@ -47,24 +47,24 @@ app.post("/send-email", async (req, res) => {
 
   try {
     // // Transporter setup for Gmail
-    // let transporter = nodemailer.createTransport({
-    //   service: "gmail",
-    //   auth: {
-    //     user: process.env.EMAIL_USER,
-    //     pass: process.env.EMAIL_PASS,
-    //   },
-    // });
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
 
 
-      const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+  //     const transporter = nodemailer.createTransport({
+  //   host: "smtp.gmail.com",
+  //   port: 587,
+  //   auth: {
+  //     user: process.env.EMAIL_USER,
+  //     pass: process.env.EMAIL_PASS,
+  //   },
+  // });
 // const transporter = nodemailer.createTransport({
 //   host:"smtp.gmail.com",
 // //   host: "smtp.privateemail.com",
@@ -107,6 +107,8 @@ app.post("/send-email", async (req, res) => {
     //   `
     // };
 
+
+
     let mailOptions = {
   from: email,
   replyTo: email,
@@ -120,198 +122,227 @@ Time: ${new Date().toLocaleString()}
 Message: ${message}
   `,
   html: `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Contact Message</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-      color: #2d3436;
-      line-height: 1.6;
-      padding: 20px;
-    }
-    
-    .email-container {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    
-    .email-header {
-      background: linear-gradient(135deg, #0984e3, #00b894);
-      padding: 30px;
-      text-align: center;
-      color: white;
-    }
-    
-    .email-header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    
-    .email-header p {
-      font-size: 16px;
-      opacity: 0.9;
-    }
-    
-    .email-body {
-      padding: 30px;
-    }
-    
-    .message-info {
-      margin-bottom: 25px;
-    }
-    
-    .info-row {
-      display: flex;
-      margin-bottom: 12px;
-      align-items: flex-start;
-    }
-    
-    .info-label {
-      font-weight: 600;
-      color: #00b894;
-      min-width: 80px;
-      margin-right: 15px;
-    }
-    
-    .info-value {
-      flex: 1;
-      color: #2d3436;
-    }
-    
-    .message-content {
-      background-color: #f8f9fa;
-      padding: 25px;
-      border-radius: 15px;
-      border-left: 4px solid #00b894;
-      margin-top: 20px;
-    }
-    
-    .message-content h3 {
-      color: #0984e3;
-      margin-bottom: 15px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-    
-    .message-text {
-      color: #2d3436;
-      line-height: 1.7;
-      white-space: pre-line;
-    }
-    
-    .email-footer {
-      background-color: #161b22;
-      padding: 20px;
-      text-align: center;
-      color: #8b949e;
-      font-size: 14px;
-    }
-    
-    .email-footer a {
-      color: #74b9ff;
-      text-decoration: none;
-    }
-    
-    .email-footer a:hover {
-      text-decoration: underline;
-    }
-    
-    @media (max-width: 600px) {
-      .email-container {
-        border-radius: 15px;
-      }
-      
-      .email-header {
-        padding: 20px;
-      }
-      
-      .email-header h1 {
-        font-size: 24px;
-      }
-      
-      .email-body {
-        padding: 20px;
-      }
-      
-      .info-row {
-        flex-direction: column;
-        margin-bottom: 15px;
-      }
-      
-      .info-label {
-        margin-bottom: 5px;
-        margin-right: 0;
-      }
-      
-      .message-content {
-        padding: 20px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="email-container">
-    <div class="email-header">
-      <h1>New Portfolio Message</h1>
-      <p>Someone contacted you through your portfolio website</p>
-    </div>
-    
-    <div class="email-body">
-      <div class="message-info">
-        <div class="info-row">
-          <span class="info-label">Name:</span>
-          <span class="info-value">${name || "Not provided"}</span>
-        </div>
-        
-        <div class="info-row">
-          <span class="info-label">Email:</span>
-          <span class="info-value">${email}</span>
-        </div>
-        
-        <div class="info-row">
-          <span class="info-label">Subject:</span>
-          <span class="info-value">${subject || "No Subject"}</span>
-        </div>
-        
-        <div class="info-row">
-          <span class="info-label">Time:</span>
-          <span class="info-value">${new Date().toLocaleString()}</span>
-        </div>
-      </div>
-      
-      <div class="message-content">
-        <h3>Message Content</h3>
-        <div class="message-text">${message}</div>
-      </div>
-    </div>
-    
-    <div class="email-footer">
-      <p>This message was sent from your portfolio contact form</p>
-      <p>© ${new Date().getFullYear()} Mohd Saif Khan Portfolio</p>
-    </div>
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 10px; padding: 20px; background: #fafafa;">
+    <h2 style="color:#0984e3; text-align:center;">New Portfolio Message</h2>
+    <p><strong>Name:</strong> ${name || "Not provided"}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Subject:</strong> ${subject || "No Subject"}</p>
+    <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
+    <hr style="margin:20px 0;">
+    <h3 style="color:#00b894;">Message:</h3>
+    <p style="white-space:pre-line; line-height:1.6;">${message}</p>
+    <hr style="margin:20px 0;">
+    <p style="font-size:12px; color:#555; text-align:center;">This message was sent from your portfolio contact form</p>
   </div>
-</body>
-</html>
   `
 };
+
+
+//     let mailOptions = {
+//   from: email,
+//   replyTo: email,
+//   to: process.env.EMAIL_USER,
+//   subject: subject || "Portfolio Contact: No Subject",
+//   text: `
+// Name: ${name || "Not provided"}
+// Email: ${email}
+// Subject: ${subject || "No Subject"}
+// Time: ${new Date().toLocaleString()}
+// Message: ${message}
+//   `,
+//   html: `
+// <!DOCTYPE html>
+// <html>
+// <head>
+//   <meta charset="utf-8">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <title>Portfolio Contact Message</title>
+//   <style>
+//     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    
+//     * {
+//       margin: 0;
+//       padding: 0;
+//       box-sizing: border-box;
+//     }
+    
+//     body {
+//       font-family: 'Poppins', sans-serif;
+//       background-color: #f8f9fa;
+//       color: #2d3436;
+//       line-height: 1.6;
+//       padding: 20px;
+//     }
+    
+//     .email-container {
+//       max-width: 600px;
+//       margin: 0 auto;
+//       background-color: #ffffff;
+//       border-radius: 20px;
+//       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+//       overflow: hidden;
+//     }
+    
+//     .email-header {
+//       background: linear-gradient(135deg, #0984e3, #00b894);
+//       padding: 30px;
+//       text-align: center;
+//       color: white;
+//     }
+    
+//     .email-header h1 {
+//       font-size: 28px;
+//       font-weight: 700;
+//       margin-bottom: 10px;
+//     }
+    
+//     .email-header p {
+//       font-size: 16px;
+//       opacity: 0.9;
+//     }
+    
+//     .email-body {
+//       padding: 30px;
+//     }
+    
+//     .message-info {
+//       margin-bottom: 25px;
+//     }
+    
+//     .info-row {
+//       display: flex;
+//       margin-bottom: 12px;
+//       align-items: flex-start;
+//     }
+    
+//     .info-label {
+//       font-weight: 600;
+//       color: #00b894;
+//       min-width: 80px;
+//       margin-right: 15px;
+//     }
+    
+//     .info-value {
+//       flex: 1;
+//       color: #2d3436;
+//     }
+    
+//     .message-content {
+//       background-color: #f8f9fa;
+//       padding: 25px;
+//       border-radius: 15px;
+//       border-left: 4px solid #00b894;
+//       margin-top: 20px;
+//     }
+    
+//     .message-content h3 {
+//       color: #0984e3;
+//       margin-bottom: 15px;
+//       font-size: 18px;
+//       font-weight: 600;
+//     }
+    
+//     .message-text {
+//       color: #2d3436;
+//       line-height: 1.7;
+//       white-space: pre-line;
+//     }
+    
+//     .email-footer {
+//       background-color: #161b22;
+//       padding: 20px;
+//       text-align: center;
+//       color: #8b949e;
+//       font-size: 14px;
+//     }
+    
+//     .email-footer a {
+//       color: #74b9ff;
+//       text-decoration: none;
+//     }
+    
+//     .email-footer a:hover {
+//       text-decoration: underline;
+//     }
+    
+//     @media (max-width: 600px) {
+//       .email-container {
+//         border-radius: 15px;
+//       }
+      
+//       .email-header {
+//         padding: 20px;
+//       }
+      
+//       .email-header h1 {
+//         font-size: 24px;
+//       }
+      
+//       .email-body {
+//         padding: 20px;
+//       }
+      
+//       .info-row {
+//         flex-direction: column;
+//         margin-bottom: 15px;
+//       }
+      
+//       .info-label {
+//         margin-bottom: 5px;
+//         margin-right: 0;
+//       }
+      
+//       .message-content {
+//         padding: 20px;
+//       }
+//     }
+//   </style>
+// </head>
+// <body>
+//   <div class="email-container">
+//     <div class="email-header">
+//       <h1>New Portfolio Message</h1>
+//       <p>Someone contacted you through your portfolio website</p>
+//     </div>
+    
+//     <div class="email-body">
+//       <div class="message-info">
+//         <div class="info-row">
+//           <span class="info-label">Name:</span>
+//           <span class="info-value">${name || "Not provided"}</span>
+//         </div>
+        
+//         <div class="info-row">
+//           <span class="info-label">Email:</span>
+//           <span class="info-value">${email}</span>
+//         </div>
+        
+//         <div class="info-row">
+//           <span class="info-label">Subject:</span>
+//           <span class="info-value">${subject || "No Subject"}</span>
+//         </div>
+        
+//         <div class="info-row">
+//           <span class="info-label">Time:</span>
+//           <span class="info-value">${new Date().toLocaleString()}</span>
+//         </div>
+//       </div>
+      
+//       <div class="message-content">
+//         <h3>Message Content</h3>
+//         <div class="message-text">${message}</div>
+//       </div>
+//     </div>
+    
+//     <div class="email-footer">
+//       <p>This message was sent from your portfolio contact form</p>
+//       <p>© ${new Date().getFullYear()} Mohd Saif Khan Portfolio</p>
+//     </div>
+//   </div>
+// </body>
+// </html>
+//   `
+// };
 
     await transporter.sendMail(mailOptions);
     res.json({ message: "Message sent successfully!" });
