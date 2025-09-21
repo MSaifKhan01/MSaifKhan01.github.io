@@ -118,7 +118,7 @@ app.post("/send-email", async (req, res) => {
         raw: makeBody(
           email,
           process.env.EMAIL_USER,
-          "Thanks for Contacting Me 🙏",
+          "Thanks for Contacting Me",
           `
           <!DOCTYPE html>
 <html>
