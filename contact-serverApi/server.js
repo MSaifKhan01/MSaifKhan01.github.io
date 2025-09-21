@@ -190,7 +190,7 @@ app.post("/send-email", async (req, res) => {
       },
     });
 
-    res.json({ message: "Emails sent successfully using Gmail API!" });
+    res.json({ message: "Emails sent successfully" });
   } catch (err) {
     console.error("❌ Gmail API error:", err);
     res.status(500).json({ message: "Failed to send message" });
