@@ -71,13 +71,7 @@ app.post("/send-email", async (req, res) => {
       return Buffer.from(str).toString("base64url");
     }
 
-    // // 1️⃣ Send mail to you
-    // await gmail.users.messages.send({
-    //   userId: "me",
-    //   requestBody: {
-    //     raw: makeBody(
-    //       process.env.EMAIL_USER,
-    //       process.env.EMAIL_USER,
+   
     // 1️⃣ Send mail to YOU
     await gmail.users.messages.send({
       userId: "me",
@@ -127,13 +121,7 @@ app.post("/send-email", async (req, res) => {
       },
     });
 
-    // // 2️⃣ Send acknowledgment back to visitor
-    // await gmail.users.messages.send({
-    //   userId: "me",
-    //   requestBody: {
-    //     raw: makeBody(
-    //       email,
-    //       process.env.EMAIL_USER,
+  
      // 2️⃣ Send Acknowledgment to Visitor
     await gmail.users.messages.send({
       userId: "me",
