@@ -42,19 +42,32 @@ app.post("/send-email", async (req, res) => {
   console.log("==========",process.env.EMAIL_USER, process.env.EMAIL_PASS)
 
   try {
-    // // Transporter setup for Gmail
-    let transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    // // // Transporter setup for Gmail
+    // let transporter = nodemailer.createTransport({
+    //   service: "gmail",
+    //   auth: {
+    //     user: process.env.EMAIL_USER,
+    //     pass: process.env.EMAIL_PASS,
+    //   },
+    // });
+
+    const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true, // true for 465, false for 587
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS, // app password
+  },
+  connectionTimeout: 10000,
+  greetingTimeout: 5000,
+  socketTimeout: 10000
+});
 
 
     // const transporter = nodemailer.createTransport({
     //   host: "smtp.gmail.com",
-    //   port: 587,
+    //   port: 465,
     //   auth: {
     //     user: process.env.EMAIL_USER,
     //     pass: process.env.EMAIL_PASS,
