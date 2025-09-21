@@ -39,6 +39,7 @@ app.post("/send-email", async (req, res) => {
     return res.status(400).json({ message: "Email and message are required." });
   }
   console.log("====req.body====",req.body)
+  console.log("==========",process.env.EMAIL_USER, process.env.EMAIL_PASS)
 
   try {
     // // // Transporter setup for Gmail
