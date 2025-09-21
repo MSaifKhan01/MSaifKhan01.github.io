@@ -1,8 +1,3 @@
-
-
-
-
-
 const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
@@ -14,10 +9,9 @@ const app = express();
 
 // Allowed frontend origins
 const allowedOrigins = [
-
   "http://127.0.0.1:5500/index3.html",
   "https://msaifkhan01.github.io",
-  "http://127.0.0.1:5500"
+  "http://127.0.0.1:5500",
 ];
 
 app.use(
@@ -36,19 +30,12 @@ app.use(
 
 app.use(bodyParser.json());
 
-
-
-
-
 const oAuth2Client = new google.auth.OAuth2(
   process.env.CLIENT_ID,
   process.env.CLIENT_SECRET,
   process.env.REDIRECT_URI
 );
 oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
-
-
-
 
 app.post("/send-email", async (req, res) => {
   const { name, email, subject, message } = req.body;
@@ -71,7 +58,6 @@ app.post("/send-email", async (req, res) => {
       return Buffer.from(str).toString("base64url");
     }
 
-   
     // 1️⃣ Send mail to YOU
     await gmail.users.messages.send({
       userId: "me",
@@ -80,7 +66,7 @@ app.post("/send-email", async (req, res) => {
           process.env.EMAIL_USER,
           process.env.EMAIL_USER,
           subject || "New Portfolio Contact",
-  `
+          `
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,9 +91,13 @@ app.post("/send-email", async (req, res) => {
       <p>Someone contacted you via your portfolio website</p>
     </div>
     <div class="body">
-      <div class="info"><span class="label">Name:</span> ${name || "Not provided"}</div>
+      <div class="info"><span class="label">Name:</span> ${
+        name || "Not provided"
+      }</div>
       <div class="info"><span class="label">Email:</span> ${email}</div>
-      <div class="info"><span class="label">Subject:</span> ${subject || "No Subject"}</div>
+      <div class="info"><span class="label">Subject:</span> ${
+        subject || "No Subject"
+      }</div>
       <div class="info"><span class="label">Time:</span> ${new Date().toLocaleString()}</div>
       <div class="message-box"><b>Message:</b><br/>${message}</div>
     </div>
@@ -121,8 +111,7 @@ app.post("/send-email", async (req, res) => {
       },
     });
 
-  
-     // 2️⃣ Send Acknowledgment to Visitor
+    // 2️⃣ Send Acknowledgment to Visitor
     await gmail.users.messages.send({
       userId: "me",
       requestBody: {
@@ -185,7 +174,6 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-
 app.listen(5000, () =>
   console.log("🚀 Server running on http://localhost:5000")
 );
@@ -194,9 +182,29 @@ app.listen(5000, () =>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // /** 📩 Template for Owner (EMAIL_USER) */
-// const ownerTemplate = (name, email, subject, message) => 
-  
+// const ownerTemplate = (name, email, subject, message) =>
+
 //   `
 // <!DOCTYPE html>
 // <html>
@@ -395,7 +403,6 @@ app.listen(5000, () =>
 
 // app.listen(5000, () => console.log("Server running on http://localhost:5000"));
 
-
 // const express = require("express");
 // const nodemailer = require("nodemailer");
 // const bodyParser = require("body-parser");
@@ -410,7 +417,6 @@ app.listen(5000, () =>
 // //   methods: ["GET", "POST"],
 // //   allowedHeaders: ["Content-Type"]
 // // }));
-
 
 // const allowedOrigins = [
 //   "http://127.0.0.1:5500/index3.html",
@@ -449,8 +455,6 @@ app.listen(5000, () =>
 //       },
 //     });
 
-
-
 //   //     const transporter = nodemailer.createTransport({
 //   //   host: "smtp.gmail.com",
 //   //   port: 587,
@@ -466,15 +470,14 @@ app.listen(5000, () =>
 // //   secure: false,
 // //   requireTLS: true,
 // //   auth: {
-// //     user: process.env.EMAIL_USER, 
-// //     pass: process.env.EMAIL_PASS, 
- 
+// //     user: process.env.EMAIL_USER,
+// //     pass: process.env.EMAIL_PASS,
+
 // //   },
 // //     tls: {
 // //     rejectUnauthorized: false // Bypass SSL certificate validation
 // //   }
 // // });
-
 
 //     // Email options - send from the user's email
 //     // let mailOptions = {
@@ -500,8 +503,6 @@ app.listen(5000, () =>
 //     //   </div>
 //     //   `
 //     // };
-
-
 
 //     let mailOptions = {
 //   from: email,
@@ -531,7 +532,6 @@ app.listen(5000, () =>
 //   `
 // };
 
-
 // //     let mailOptions = {
 // //   from: email,
 // //   replyTo: email,
@@ -553,13 +553,13 @@ app.listen(5000, () =>
 // //   <title>Portfolio Contact Message</title>
 // //   <style>
 // //     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-    
+
 // //     * {
 // //       margin: 0;
 // //       padding: 0;
 // //       box-sizing: border-box;
 // //     }
-    
+
 // //     body {
 // //       font-family: 'Poppins', sans-serif;
 // //       background-color: #f8f9fa;
@@ -567,7 +567,7 @@ app.listen(5000, () =>
 // //       line-height: 1.6;
 // //       padding: 20px;
 // //     }
-    
+
 // //     .email-container {
 // //       max-width: 600px;
 // //       margin: 0 auto;
@@ -576,51 +576,51 @@ app.listen(5000, () =>
 // //       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 // //       overflow: hidden;
 // //     }
-    
+
 // //     .email-header {
 // //       background: linear-gradient(135deg, #0984e3, #00b894);
 // //       padding: 30px;
 // //       text-align: center;
 // //       color: white;
 // //     }
-    
+
 // //     .email-header h1 {
 // //       font-size: 28px;
 // //       font-weight: 700;
 // //       margin-bottom: 10px;
 // //     }
-    
+
 // //     .email-header p {
 // //       font-size: 16px;
 // //       opacity: 0.9;
 // //     }
-    
+
 // //     .email-body {
 // //       padding: 30px;
 // //     }
-    
+
 // //     .message-info {
 // //       margin-bottom: 25px;
 // //     }
-    
+
 // //     .info-row {
 // //       display: flex;
 // //       margin-bottom: 12px;
 // //       align-items: flex-start;
 // //     }
-    
+
 // //     .info-label {
 // //       font-weight: 600;
 // //       color: #00b894;
 // //       min-width: 80px;
 // //       margin-right: 15px;
 // //     }
-    
+
 // //     .info-value {
 // //       flex: 1;
 // //       color: #2d3436;
 // //     }
-    
+
 // //     .message-content {
 // //       background-color: #f8f9fa;
 // //       padding: 25px;
@@ -628,20 +628,20 @@ app.listen(5000, () =>
 // //       border-left: 4px solid #00b894;
 // //       margin-top: 20px;
 // //     }
-    
+
 // //     .message-content h3 {
 // //       color: #0984e3;
 // //       margin-bottom: 15px;
 // //       font-size: 18px;
 // //       font-weight: 600;
 // //     }
-    
+
 // //     .message-text {
 // //       color: #2d3436;
 // //       line-height: 1.7;
 // //       white-space: pre-line;
 // //     }
-    
+
 // //     .email-footer {
 // //       background-color: #161b22;
 // //       padding: 20px;
@@ -649,43 +649,43 @@ app.listen(5000, () =>
 // //       color: #8b949e;
 // //       font-size: 14px;
 // //     }
-    
+
 // //     .email-footer a {
 // //       color: #74b9ff;
 // //       text-decoration: none;
 // //     }
-    
+
 // //     .email-footer a:hover {
 // //       text-decoration: underline;
 // //     }
-    
+
 // //     @media (max-width: 600px) {
 // //       .email-container {
 // //         border-radius: 15px;
 // //       }
-      
+
 // //       .email-header {
 // //         padding: 20px;
 // //       }
-      
+
 // //       .email-header h1 {
 // //         font-size: 24px;
 // //       }
-      
+
 // //       .email-body {
 // //         padding: 20px;
 // //       }
-      
+
 // //       .info-row {
 // //         flex-direction: column;
 // //         margin-bottom: 15px;
 // //       }
-      
+
 // //       .info-label {
 // //         margin-bottom: 5px;
 // //         margin-right: 0;
 // //       }
-      
+
 // //       .message-content {
 // //         padding: 20px;
 // //       }
@@ -698,36 +698,36 @@ app.listen(5000, () =>
 // //       <h1>New Portfolio Message</h1>
 // //       <p>Someone contacted you through your portfolio website</p>
 // //     </div>
-    
+
 // //     <div class="email-body">
 // //       <div class="message-info">
 // //         <div class="info-row">
 // //           <span class="info-label">Name:</span>
 // //           <span class="info-value">${name || "Not provided"}</span>
 // //         </div>
-        
+
 // //         <div class="info-row">
 // //           <span class="info-label">Email:</span>
 // //           <span class="info-value">${email}</span>
 // //         </div>
-        
+
 // //         <div class="info-row">
 // //           <span class="info-label">Subject:</span>
 // //           <span class="info-value">${subject || "No Subject"}</span>
 // //         </div>
-        
+
 // //         <div class="info-row">
 // //           <span class="info-label">Time:</span>
 // //           <span class="info-value">${new Date().toLocaleString()}</span>
 // //         </div>
 // //       </div>
-      
+
 // //       <div class="message-content">
 // //         <h3>Message Content</h3>
 // //         <div class="message-text">${message}</div>
 // //       </div>
 // //     </div>
-    
+
 // //     <div class="email-footer">
 // //       <p>This message was sent from your portfolio contact form</p>
 // //       <p>© ${new Date().getFullYear()} Mohd Saif Khan Portfolio</p>
@@ -747,12 +747,3 @@ app.listen(5000, () =>
 // });
 
 // app.listen(5000, () => console.log("Server running on http://localhost:5000"));
-
-
-
-
-
-
-
-
-
