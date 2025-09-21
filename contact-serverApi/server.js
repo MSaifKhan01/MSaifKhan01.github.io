@@ -14,6 +14,7 @@ const app = express();
 
 // Allowed frontend origins
 const allowedOrigins = [
+
   "http://127.0.0.1:5500/index3.html",
   "https://msaifkhan01.github.io",
   "http://127.0.0.1:5500"
@@ -35,7 +36,10 @@ app.use(
 
 app.use(bodyParser.json());
 
-// Gmail OAuth2 Setup
+
+
+const { google } = require("googleapis");
+
 const oAuth2Client = new google.auth.OAuth2(
   process.env.CLIENT_ID,
   process.env.CLIENT_SECRET,
@@ -43,98 +47,161 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
-// POST /send-email
 app.post("/send-email", async (req, res) => {
   const { name, email, subject, message } = req.body;
 
-  if (!email || !message) {
-    return res
-      .status(400)
-      .json({ message: "Email and message are required." });
-  }
-
-  console.log("Request body:", req.body);
-
   try {
-    // Get fresh access token
-    const accessToken = await oAuth2Client.getAccessToken();
+    const gmail = google.gmail({ version: "v1", auth: oAuth2Client });
 
-    // Transporter with OAuth2
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        type: "OAuth2",
-        user: process.env.EMAIL_USER,
-        clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        refreshToken: process.env.REFRESH_TOKEN,
-        accessToken: accessToken.token,
+    // Encode email as base64
+    function makeBody(to, from, subject, message) {
+      const str = [
+        `To: ${to}`,
+        `From: ${from}`,
+        `Subject: ${subject}`,
+        "MIME-Version: 1.0",
+        "Content-Type: text/html; charset=utf-8",
+        "",
+        message,
+      ].join("\n");
+
+      return Buffer.from(str).toString("base64url");
+    }
+
+    // 1️⃣ Send mail to you
+    await gmail.users.messages.send({
+      userId: "me",
+      requestBody: {
+        raw: makeBody(
+          process.env.EMAIL_USER,
+          process.env.EMAIL_USER,
+          `📩 New message from ${name || "Visitor"} - ${subject}`,
+          `<p><b>Name:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Message:</b> ${message}</p>`
+        ),
       },
     });
 
-    // 1️⃣ Send email to YOU (owner)
-    await transporter.sendMail({
-      from: `"Portfolio Contact Form" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER, // Your inbox
-      subject: `📩 New message from ${name || "Visitor"} - ${subject}`,
-      html: `
-      <div style="font-family:Poppins,Arial,sans-serif; background:#f9f9f9; padding:20px;">
-        <div style="max-width:600px;margin:auto;background:#fff;border-radius:12px;padding:25px;box-shadow:0 6px 20px rgba(0,0,0,0.1);">
-          <h2 style="color:#0984e3;margin-bottom:15px;">New Contact Form Submission 🚀</h2>
-          <p><strong>Name:</strong> ${name || "Not provided"}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Subject:</strong> ${subject || "Not provided"}</p>
-          <div style="background:#f1f2f6;border-left:4px solid #00b894;padding:15px;border-radius:8px;margin-top:10px;">
-            <p style="margin:0;white-space:pre-line;">${message}</p>
-          </div>
-        </div>
-      </div>`,
+    // 2️⃣ Send acknowledgment back to visitor
+    await gmail.users.messages.send({
+      userId: "me",
+      requestBody: {
+        raw: makeBody(
+          email,
+          process.env.EMAIL_USER,
+          "✅ Thanks for contacting Mohd Saif Khan!",
+          `<h2>Thanks ${name || "there"} 🙏</h2><p>I got your message and will reply soon.</p>`
+        ),
+      },
     });
 
-    console.log("📨 Mail sent to your inbox!");
-
-    // 2️⃣ Send acknowledgment email back to visitor
-    await transporter.sendMail({
-      from: `"Mohd Saif Khan Portfolio" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: "✅ Thanks for contacting Mohd Saif Khan!",
-      html: `
-      <div style="font-family:Poppins,Arial,sans-serif; background:#f8f9fa; padding:20px;">
-        <div style="max-width:600px;margin:auto;background:#fff;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.1);overflow:hidden;">
-          <div style="background:linear-gradient(135deg, #0984e3, #00b894); padding:30px; text-align:center; color:white;">
-            <h1 style="margin:0;font-size:26px;">Thank You for Contacting Me!</h1>
-          </div>
-          <div style="padding:30px;">
-            <p>Hi <span style="color:#0984e3;font-weight:600;">${name || "there"}</span>,</p>
-            <p>Thanks for reaching out through my portfolio website. 🙏</p>
-            <p>I’ve received your message and will respond shortly.</p>
-
-            <div style="background:#f1f2f6;border-left:4px solid #00b894;padding:15px;border-radius:10px;margin-top:20px;white-space:pre-line;">
-              <p style="margin:0;"><strong>Your Message:</strong></p>
-              <p>${message}</p>
-            </div>
-
-            <p style="margin-top:20px;">Meanwhile, let’s connect on LinkedIn:</p>
-            <a href="https://www.linkedin.com/in/mohd-saif-khan-3b4979202/" target="_blank"
-              style="display:inline-block;background:#0984e3;color:white;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:600;margin-top:10px;">
-              🔗 Connect on LinkedIn
-            </a>
-          </div>
-          <div style="background:#161b22;padding:15px;text-align:center;color:#8b949e;font-size:14px;">
-            © ${new Date().getFullYear()} Mohd Saif Khan Portfolio
-          </div>
-        </div>
-      </div>`,
-    });
-
-    console.log("✅ Acknowledgment email sent to visitor!");
-
-    res.json({ message: "Emails sent successfully!" });
-  } catch (error) {
-    console.error("❌ Error sending email:", error);
-    res.status(500).json({ message: "Failed to send message." });
+    res.json({ message: "Emails sent successfully using Gmail API!" });
+  } catch (err) {
+    console.error("❌ Gmail API error:", err);
+    res.status(500).json({ message: "Failed to send message" });
   }
 });
+
+
+// // Gmail OAuth2 Setup
+// const oAuth2Client = new google.auth.OAuth2(
+//   process.env.CLIENT_ID,
+//   process.env.CLIENT_SECRET,
+//   process.env.REDIRECT_URI
+// );
+// oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
+
+// // POST /send-email
+// app.post("/send-email", async (req, res) => {
+//   const { name, email, subject, message } = req.body;
+
+//   if (!email || !message) {
+//     return res
+//       .status(400)
+//       .json({ message: "Email and message are required." });
+//   }
+
+//   console.log("Request body:", req.body);
+
+//   try {
+//     // Get fresh access token
+//     const accessToken = await oAuth2Client.getAccessToken();
+
+//     // Transporter with OAuth2
+//     const transporter = nodemailer.createTransport({
+//       service: "gmail",
+//       auth: {
+//         type: "OAuth2",
+//         user: process.env.EMAIL_USER,
+//         clientId: process.env.CLIENT_ID,
+//         clientSecret: process.env.CLIENT_SECRET,
+//         refreshToken: process.env.REFRESH_TOKEN,
+//         accessToken: accessToken.token,
+//       },
+//     });
+
+//     // 1️⃣ Send email to YOU (owner)
+//     await transporter.sendMail({
+//       from: `"Portfolio Contact Form" <${process.env.EMAIL_USER}>`,
+//       to: process.env.EMAIL_USER, // Your inbox
+//       subject: `📩 New message from ${name || "Visitor"} - ${subject}`,
+//       html: `
+//       <div style="font-family:Poppins,Arial,sans-serif; background:#f9f9f9; padding:20px;">
+//         <div style="max-width:600px;margin:auto;background:#fff;border-radius:12px;padding:25px;box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+//           <h2 style="color:#0984e3;margin-bottom:15px;">New Contact Form Submission 🚀</h2>
+//           <p><strong>Name:</strong> ${name || "Not provided"}</p>
+//           <p><strong>Email:</strong> ${email}</p>
+//           <p><strong>Subject:</strong> ${subject || "Not provided"}</p>
+//           <div style="background:#f1f2f6;border-left:4px solid #00b894;padding:15px;border-radius:8px;margin-top:10px;">
+//             <p style="margin:0;white-space:pre-line;">${message}</p>
+//           </div>
+//         </div>
+//       </div>`,
+//     });
+
+//     console.log("📨 Mail sent to your inbox!");
+
+//     // 2️⃣ Send acknowledgment email back to visitor
+//     await transporter.sendMail({
+//       from: `"Mohd Saif Khan Portfolio" <${process.env.EMAIL_USER}>`,
+//       to: email,
+//       subject: "✅ Thanks for contacting Mohd Saif Khan!",
+//       html: `
+//       <div style="font-family:Poppins,Arial,sans-serif; background:#f8f9fa; padding:20px;">
+//         <div style="max-width:600px;margin:auto;background:#fff;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.1);overflow:hidden;">
+//           <div style="background:linear-gradient(135deg, #0984e3, #00b894); padding:30px; text-align:center; color:white;">
+//             <h1 style="margin:0;font-size:26px;">Thank You for Contacting Me!</h1>
+//           </div>
+//           <div style="padding:30px;">
+//             <p>Hi <span style="color:#0984e3;font-weight:600;">${name || "there"}</span>,</p>
+//             <p>Thanks for reaching out through my portfolio website. 🙏</p>
+//             <p>I’ve received your message and will respond shortly.</p>
+
+//             <div style="background:#f1f2f6;border-left:4px solid #00b894;padding:15px;border-radius:10px;margin-top:20px;white-space:pre-line;">
+//               <p style="margin:0;"><strong>Your Message:</strong></p>
+//               <p>${message}</p>
+//             </div>
+
+//             <p style="margin-top:20px;">Meanwhile, let’s connect on LinkedIn:</p>
+//             <a href="https://www.linkedin.com/in/mohd-saif-khan-3b4979202/" target="_blank"
+//               style="display:inline-block;background:#0984e3;color:white;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:600;margin-top:10px;">
+//               🔗 Connect on LinkedIn
+//             </a>
+//           </div>
+//           <div style="background:#161b22;padding:15px;text-align:center;color:#8b949e;font-size:14px;">
+//             © ${new Date().getFullYear()} Mohd Saif Khan Portfolio
+//           </div>
+//         </div>
+//       </div>`,
+//     });
+
+//     console.log("✅ Acknowledgment email sent to visitor!");
+
+//     res.json({ message: "Emails sent successfully!" });
+//   } catch (error) {
+//     console.error("❌ Error sending email:", error);
+//     res.status(500).json({ message: "Failed to send message." });
+//   }
+// });
 
 app.listen(5000, () =>
   console.log("🚀 Server running on http://localhost:5000")
