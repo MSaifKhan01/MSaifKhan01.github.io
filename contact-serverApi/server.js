@@ -580,11 +580,11 @@ app.post("/send-email", async (req, res) => {
     });
   }
 
-  // 🚀 Respond immediately (fast UX)
-  res.status(200).json({
-    success: true,
-    message: "Message received successfully",
-  });
+  // // 🚀 Respond immediately (fast UX)
+  // res.status(200).json({
+  //   success: true,
+  //   message: "Message received successfully",
+  // });
 
   try {
     // ✅ CREATE TRANSPORTER INSIDE REQUEST (IMPORTANT)
@@ -707,6 +707,11 @@ app.post("/send-email", async (req, res) => {
 
     console.log("📧 Emails sent successfully");
 
+  // 🚀 Respond immediately (fast UX)
+  res.status(200).json({
+    success: true,
+    message: "Message received successfully",
+  });
   } catch (error) {
     console.error("❌ Email sending failed:", error);
   }
