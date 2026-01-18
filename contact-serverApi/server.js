@@ -561,8 +561,31 @@ require("dotenv").config();
 const app = express();
 
 // Middleware
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
+
+// Allowed frontend origins
+const allowedOrigins = [
+  "http://127.0.0.1:5500/index3.html",
+  "https://msaifkhan01.github.io",
+  "http://127.0.0.1:5500",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
+
+app.use(bodyParser.json());
 
 // Test Route
 app.get("/", (req, res) => {
