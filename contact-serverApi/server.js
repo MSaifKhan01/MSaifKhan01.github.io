@@ -575,8 +575,8 @@ app.use(
   })
 );
 
-// IMPORTANT: allow preflight
-app.options("*", cors());
+// // IMPORTANT: allow preflight
+// app.options("/*", cors());
 
 
 // app.use(bodyParser.json());
