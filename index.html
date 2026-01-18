@@ -2050,13 +2050,15 @@
             
 
             try {
-                const res = await fetch("https://msaifkhan01-github-io.onrender.com/send-email", {
+                // const res = await fetch("https://msaifkhan01-github-io.onrender.com/send-email", {
                 //    const res = await fetch("http://localhost:5000/send-email", {
+                const res = await fetch("https://m-saif-khan01-github-io.vercel.app//send-email", {
+
                 method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(formData)
                 });
-
+console.log("=====res====",res)
                 const data = await res.json();
                 if (res.ok) {
                     showSuccessModal(data.message);
