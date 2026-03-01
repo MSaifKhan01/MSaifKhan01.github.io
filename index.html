@@ -1074,6 +1074,228 @@
             color: white;
         }
 
+/* Enhanced styles for project links in achievements */
+.timeline-achievement.project-item {
+    background: rgba(0, 184, 148, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+    margin-bottom: 15px;
+}
+
+.timeline-achievement.project-item i {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.project-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.project-link {
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.project-link::after {
+    content: '↗';
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover::after {
+    transform: translate(2px, -2px);
+}
+
+.project-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Add screenshot preview functionality */
+.project-link.with-preview {
+    position: relative;
+}
+
+.project-link.with-preview:hover::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px var(--shadow);
+    z-index: 10;
+    margin-top: 10px;
+    background-image: var(--preview-image);
+    background-size: cover;
+    background-position: top;
+    border: 2px solid var(--accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline-achievement.project-item {
+        padding: 10px;
+    }
+    
+    .project-link {
+        font-size: 0.95rem;
+    }
+    
+    .project-desc {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline-achievement {
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+    
+    .timeline-tech {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+    
+    .timeline-entry .timeline-role {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Enhanced Timeline Technologies Styles */
+.timeline-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 15px;
+    padding-top: 5px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.timeline-tech {
+    background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(9, 132, 227, 0.1));
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border: 1px solid var(--accent);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 8px rgba(0, 184, 148, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-tech::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.timeline-tech:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 184, 148, 0.3);
+    border-color: transparent;
+}
+
+.timeline-tech:hover::before {
+    left: 100%;
+}
+
+/* Different color variations for tech tags based on technology type */
+.timeline-tech[data-type="frontend"] {
+    border-color: #0984e3;
+    color: #0984e3;
+}
+
+.timeline-tech[data-type="frontend"]:hover {
+    background: #0984e3;
+    color: #fff;
+}
+
+.timeline-tech[data-type="backend"] {
+    border-color: #00b894;
+    color: #00b894;
+}
+
+.timeline-tech[data-type="backend"]:hover {
+    background: #00b894;
+    color: #fff;
+}
+
+.timeline-tech[data-type="database"] {
+    border-color: #fdcb6e;
+    color: #fdcb6e;
+}
+
+.timeline-tech[data-type="database"]:hover {
+    background: #fdcb6e;
+    color: #fff;
+}
+
+.timeline-tech[data-type="devops"] {
+    border-color: #e17055;
+    color: #e17055;
+}
+
+.timeline-tech[data-type="devops"]:hover {
+    background: #e17055;
+    color: #fff;
+}
+
+.timeline-tech[data-type="cloud"] {
+    border-color: #6c5ce7;
+    color: #6c5ce7;
+}
+
+.timeline-tech[data-type="cloud"]:hover {
+    background: #6c5ce7;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline-techs {
+        gap: 8px;
+        margin: 15px 0 10px;
+    }
+    
+    .timeline-tech {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+}
+
         /* Responsive tweaks */
         @media (max-width: 768px) {
             .hero-title {
@@ -1191,6 +1413,22 @@
         .toast.error {
             background: #dc3545;
         }
+
+
+        /* GitHub section responsive */
+@media (max-width: 768px) {
+    #github [style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+    }
+    
+    #github [style*="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+    }
+    
+    #github .stats-cards {
+        padding: 10px;
+    }
+}
     </style>
 </head>
 
@@ -1309,22 +1547,158 @@
             </div>
         </section>
 
-        <!-- GitHub Stats Section -->
-        <section id="github">
-            <h2>GitHub Statistics</h2>
-            <div class="stats-cards">
-                <img src="https://github-readme-stats.vercel.app/api?username=MSaifKhan01&theme=radical&hide_border=false&include_all_commits=true&count_private=true"
-                    alt="GitHub Stats" />
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MSaifKhan01&hide_border=true&layout=compact&theme=radical"
-                    alt="Top Languages" />
-                <img src="https://github-readme-streak-stats.herokuapp.com/?user=msaifkhan01&theme=highcontrast&hide_border=false"
-                    alt="GitHub Streak" />
-                <!--<div class="github-calendar">-->
-                <!--  <h3>My GitHub Contributions</h3>-->
-                <!--  <img src="https://ghchart.rshah.org/MSaifKhan01" alt="MSaifKhan01's Github chart" />-->
-                <!--</div>-->
+
+       
+
+
+
+<section id="github">
+    <h2>GitHub Statistics</h2>
+    
+    <!-- Row 1: GitHub Stats Card and Top Languages -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+        <!-- GitHub Stats Card -->
+        <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
+            <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
+                <i class='bx bx-stats' style="color: var(--accent);"></i> GitHub Stats
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px dashed var(--border-color);">
+                    <span style="color: var(--text-muted);">Total Contributions</span>
+                    <span style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">1,783</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px dashed var(--border-color);">
+                    <span style="color: var(--text-muted);">Contributions Period</span>
+                    <span style="font-weight: 500; color: var(--text-secondary);">29 Nov 2022 - Present</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: var(--text-muted);">Current Streak</span>
+                    <span style="font-size: 1.3rem; font-weight: 600; color: #e17055;">0 days</span>
+                </div>
             </div>
-        </section>
+        </div>
+        
+        <!-- Top Languages Card -->
+        <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
+            <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
+                <i class='bx bx-code-alt' style="color: var(--accent);"></i> Top Languages
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="width: 80px; color: var(--text-muted);">JavaScript</span>
+                    <div style="flex: 1; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                        <div style="width: 85%; height: 100%; background: #f7df1e;"></div>
+                    </div>
+                    <span style="color: var(--text-secondary); font-weight: 500;">85%</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="width: 80px; color: var(--text-muted);">HTML</span>
+                    <div style="flex: 1; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                        <div style="width: 70%; height: 100%; background: #e34c26;"></div>
+                    </div>
+                    <span style="color: var(--text-secondary); font-weight: 500;">70%</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="width: 80px; color: var(--text-muted);">CSS</span>
+                    <div style="flex: 1; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                        <div style="width: 60%; height: 100%; background: #264de4;"></div>
+                    </div>
+                    <span style="color: var(--text-secondary); font-weight: 500;">60%</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="width: 80px; color: var(--text-muted);">Python</span>
+                    <div style="flex: 1; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                        <div style="width: 40%; height: 100%; background: #306998;"></div>
+                    </div>
+                    <span style="color: var(--text-secondary); font-weight: 500;">40%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Row 2: Streak Stats and Longest Streak -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+        <!-- Current Streak Card -->
+        <div style="background: linear-gradient(135deg, rgba(225, 112, 85, 0.1), rgba(225, 112, 85, 0.05)); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
+            <h3 style="color: var(--secondary); margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+                <i class='bx bx-fire' style="color: #e17055;"></i> Current Streak
+            </h3>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <span style="font-size: 2.5rem; font-weight: 700; color: #e17055;">0</span>
+                <span style="color: var(--text-muted);">days</span>
+            </div>
+            <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
+                Last active: 1 Mar 2025
+            </div>
+        </div>
+        
+        <!-- Longest Streak Card -->
+        <div style="background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 184, 148, 0.05)); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
+            <h3 style="color: var(--secondary); margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+                <i class='bx bx-trophy' style="color: var(--accent);"></i> Longest Streak
+            </h3>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <span style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">61</span>
+                <span style="color: var(--text-muted);">days</span>
+            </div>
+            <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
+                10 Jul 2023 - 8 Sep 2023
+            </div>
+        </div>
+    </div>
+    
+    <!-- Row 3: Top Contributed Repositories -->
+    <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
+        <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
+            <i class='bx bx-git-repo-forked' style="color: var(--accent);"></i> Top Contributed Repositories
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;">
+            <a href="https://github.com/MSaifKhan01/EdgeChains" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
+                <span style="font-weight: 500;">EdgeChains</span>
+            </a>
+            <a href="https://github.com/MSaifKhan01/COOL-CLOTH" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
+                <span style="font-weight: 500;">COOL-CLOTH</span>
+            </a>
+            <a href="https://github.com/MSaifKhan01/techWhiz" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
+                <span style="font-weight: 500;">techWhiz</span>
+            </a>
+            <a href="https://github.com/MSaifKhan01/parsimonious-dover-8073" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
+                <span style="font-weight: 500;">parsimonious-dover-8073</span>
+            </a>
+            <a href="https://github.com/MSaifKhan01/enormous-library-3081" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
+                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
+                <span style="font-weight: 500;">enormous-library-3081</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Row 4: Profile Views and GitHub Trophy -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+        <!-- Profile Views -->
+        <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color); text-align: center;">
+            <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class='bx bx-show' style="color: var(--accent);"></i> Profile Views
+            </h3>
+            <div style="display: inline-block; background: linear-gradient(135deg, var(--accent), var(--secondary)); padding: 20px 40px; border-radius: 50px;">
+                <span style="font-size: 2.5rem; font-weight: 700; color: white;">3,366</span>
+            </div>
+        </div>
+        
+        <!-- GitHub Trophy -->
+        <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color); text-align: center;">
+            <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class='bx bx-trophy' style="color: var(--accent);"></i> GitHub Trophy
+            </h3>
+            <img src="https://github-profile-trophy.vercel.app/?username=MSaifKhan01&theme=radical&no-frame=true&row=2&column=3&no-bg=true" 
+                 alt="GitHub Trophies" 
+                 style="max-width: 100%; border-radius: 12px;" />
+        </div>
+    </div>
+</section>
 
         <!-- Skills Section -->
         <section id="skills">
@@ -1445,49 +1819,84 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script>
-        // Data Objects
-        const experienceData = [
-            {
-                date: "May 2025 – Present",
-                role: "Full Stack Developer",
-                company: "Labrys Solutions Pvt Ltd",
-                location: "Gurgaon, Haryana",
-                // companyUrl: "https://labryssolutions.com/",
-                description: "Developing large-scale APIs and backend systems with Node.js, MongoDB, MySQL, and Prisma, while building frontends with React. Collaborating with the IoT team on platforms for IoT-driven solutions and leading the development of scalable web applications using a microservices architecture.",
-                actions: [
-                    // { text: "Experience Letter", icon: "bx-award", href: "#" },
-                    // { text: "Certificate", icon: "bx-certificate", href: "#", secondary: true }
-                ]
-            },
-            {
-                date: "Sep 2024 – Apr 2025",
-                role: "Software Development Engineer Intern",
-                company: "DigiCraft Pvt Ltd",
-                location: "Delhi",
-                // companyUrl: "https://digicraft.ai/",
-                // companyUrl: "https://digicraft.ai/",
-                description: "Worked with NestJS, Docker, MongoDB, and Elasticsearch to enhance backend scalability. Built a Search API with advanced filters, optimized cart and order modules for an e-commerce platform, and contributed to the ONDC buyer application. Also explored the seller-side protocol to strengthen buyer-side implementation.",
-                actions: [
-                    // { text: "Experience Letter", icon: "bx-award", href: "#" },
-                    { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1iqXOdGc7zqCGxwRLuEYb0nJaeQa2_glN/view", secondary: true },
-                    // { text: "Recommendation", icon: "bx-file-pdf", href: "#", secondary: true }
-                ]
-            },
-            {
-                date: "Jan 2024 – Mar 2024",
-                role: "NodeJS Backend Developer Intern",
-                company: "RedCarpet",
-                location: "Remote (Gurgaon Haryana)",
-                // companyUrl: "http://www.redcarpetup.com/",
-                description: "Integrated OpenAI GPT-4 APIs to deliver intelligent features, and developed interactive dashboards using PostgreSQL,React, and Express.js. Worked with edgeChain and edgeCloud libraries to implement advanced AI-driven solutions.",
-                actions: [
-                    // { text: "Experience Letter", icon: "bx-award", href: "#" },
-                    { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1egn2V9mIuJkTjWCYFJarbfifQd8fok45/view", secondary: true }
-                ]
-            }
-        ];
 
-        const educationData = [
+
+        // Data Objects
+
+
+
+// Data Objects
+const experienceData = [
+    {
+        date: "May 2025 – Present",
+        role: "Full Stack Developer",
+        company: "Labrys Solutions Pvt Ltd",
+        location: "Gurgaon, Haryana",
+        companyUrl: "https://labryssolutions.com/",
+        description: "Leading full-stack development for multiple enterprise applications using React, Node.js/Express, and modern databases.",
+        achievements: [
+            "Built scalable full-stack applications with React and Node.js/Express, integrating Razorpay payments, MongoDB, MySQL, Prisma, and AWS S3",
+            {
+                text: "LeaguePoolStats",
+                link: "https://leaguepoolstats.com/",
+                description: "Tournament booking platform with responsive React UI and integrated APIs for tournament and participant management."
+            },
+            {
+                text: "EMS Dashboard",
+                link: "https://soodprints.in/ems/",
+                description: "IoT-based metering solution with real-time dashboards, Built user dashboards for real-time meter activity and usage tracking, and developed admin and super-admin modules for meter management, user control, payment disbursement, and related operational features."
+            },
+            {
+                text: "HireIQ",
+                link: "https://www.hireiq.in/",
+                description: "Developed secure backend APIs and implemented end-to-end hiring workflows, integrating frontend and backend modules for candidate management."
+            }
+        ],
+        technologies: ["React", "Node.js", "Express", "MongoDB", "MySQL", "Prisma", "AWS S3", "Razorpay"],
+        actions: []
+    },
+    {
+        date: "Sep 2024 – Apr 2025",
+        role: "Software Development Engineer",
+        company: "DigiCraft Pvt Ltd",
+        location: "Delhi (Hybrid)",
+        companyUrl: "https://digicraft.ai/",
+        description: "Enhanced backend scalability and contributed to e-commerce platform development using modern technologies.",
+        achievements: [
+            "Built shopping cart and order management system from scratch using NestJS and MongoDB based on ONDC protocol specifications, with optimized database queries for improved performance",
+            "Designed and implemented Elasticsearch-based search functionality for products by name, category, and location, enhancing product discovery and user experience",
+            "Set up complete ONDC protocol integration from scratch—built the buyer application with request/response signing, encryption, and payload validation as per ONDC specifications, while exploring seller-side implementation when no codebase existed"
+        ],
+        technologies: ["NestJS", "Docker", "MongoDB", "Elasticsearch", "ONDC", "Microservices"],
+        actions: [
+            { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1ULYkRzzmVeQ90Gx3Sy1kOVGuW-bnvE3z/view?usp=sharing", secondary: true }
+        ]
+    },
+    {
+        date: "Jan 2024 – Mar 2024",
+        role: "NodeJS Backend Developer Intern",
+        company: "RedCarpet",
+        location: "Remote (Gurgaon, Haryana)",
+        companyUrl: "http://www.redcarpetup.com/",
+        description: "Integrated AI capabilities and developed interactive dashboards for intelligent feature delivery.",
+        achievements: [
+            "Utilized OpenAI GPT-4 APIs to implement generative AI features for enhanced user experience",
+            "Developed interactive dashboards using PostgreSQL, React, Express.js, and Node.js for data visualization",
+            "Worked with edgeChain and edgeCloud libraries at arakoo.ai to implement advanced AI-driven solutions",
+            "Integrated PostgreSQL databases with Express.js backend for efficient data management and retrieval",
+            {
+                text: "EdgeChains",
+                link: "https://github.com/arakoodev/EdgeChains/graphs/contributors",
+                description: "Contributed to EdgeChains library development at arakoo.ai"
+            }
+        ],
+        technologies: ["Node.js", "Express", "PostgreSQL", "React", "OpenAI GPT-4", "EdgeChain", "EdgeCloud"],
+        actions: [
+            { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1egn2V9mIuJkTjWCYFJarbfifQd8fok45/view", secondary: true }
+        ]
+    }
+];
+const educationData = [
             {
                 date: "2020 – 2024",
                 role: "B.Tech in Electrical & Electronics Engineering",
@@ -1726,89 +2135,111 @@
         modalOkBtn.addEventListener('click', hideModal);
         modalCancelBtn.addEventListener('click', hideModal);
 
-        // Function to generate timeline entries
-        function generateTimelineEntries(data, containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
+ 
 
-            data.forEach(item => {
-                const entry = document.createElement('div');
-                entry.className = 'timeline-entry';
+// Function to generate timeline entries with enhanced UI and clickable project links
+function generateTimelineEntries(data, containerId) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
 
-                // Create company HTML based on whether companyUrl exists
-                let companyHtml;
-                if (item.companyUrl) {
-                    companyHtml = `<a href="${item.companyUrl}" target="_blank">${item.company}</a>`;
-                } else {
-                    companyHtml = `<span>${item.company}</span>`;
-                }
+    data.forEach(item => {
+        const entry = document.createElement('div');
+        entry.className = 'timeline-entry';
 
-                entry.innerHTML = `
-      <div class="circle"></div>
-      <div class="timeline-date">${item.date}</div>
-      <div class="timeline-role">${item.role}</div>
-      <div class="timeline-company">
-        ${companyHtml}
-        <i>(${item.location})</i>
-      </div>
-      <div class="timeline-desc">${item.description}</div>
-      <div class="timeline-actions">
-        ${item.actions.map(action =>
-                    `<a href="${action.href}" target="_blank" class="timeline-btn ${action.secondary ? 'secondary' : ''}"><i class="${action.icon}"></i>${action.text}</a>`
+        // Create certificate HTML separately
+        const certificateHtml = item.actions && item.actions.length ? `
+            <div style="display: flex; gap: 8px;">
+                ${item.actions.map(action =>
+                    `<a href="${action.href}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px; background: ${action.secondary ? 'transparent' : 'var(--accent)'}; color: ${action.secondary ? 'var(--secondary)' : '#fff'}; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; text-decoration: none; border: 1px solid ${action.secondary ? 'var(--secondary)' : 'var(--accent)'}; transition: all 0.3s ease;">
+                        <i class='bx ${action.icon}' style="font-size: 0.9rem;"></i>${action.text}
+                    </a>`
                 ).join('')}
-      </div>
-    `;
+            </div>
+        ` : '';
 
-                container.appendChild(entry);
-            });
+        // Create company HTML (now without certificate)
+        let companyHtml;
+        if (item.companyUrl) {
+            companyHtml = `
+                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <a href="${item.companyUrl}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--secondary); text-decoration: none;">${item.company}</a>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">${item.location}</span>
+                </div>
+            `;
+        } else {
+            companyHtml = `
+                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <span style="font-weight: 600; color: var(--secondary);">${item.company}</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">${item.location}</span>
+                </div>
+            `;
         }
-        
-        // // Function to generate project cards
-        // function generateProjectCards() {
-        //     const carousel = document.getElementById('projects-carousel');
-        //     carousel.innerHTML = '';
 
-        //     projectsData.forEach(project => {
-        //         const item = document.createElement('div');
-        //         item.className = 'item';
+        // Generate achievements HTML with support for linked projects and proper vertical spacing
+        const achievementsHtml = item.achievements ? `
+            <div class="timeline-achievements" style="margin: 15px 0 10px 0;">
+                ${item.achievements.map(achievement => {
+                    if (typeof achievement === 'object' && achievement.link) {
+                        // This is a project with a link
+                        return `
+                            <div class="timeline-achievement project-item" style="margin-bottom: 12px; padding-left: 5px;">
+                                <div class="project-details">
+                                    <a href="${achievement.link}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--accent); text-decoration: none; display: inline-block; align-items: center; gap: 4px;">
+                                        ${achievement.text} <i class='bx bx-link-external' style="font-size: 0.9rem;"></i>
+                                    </a>
+                                    <span class="project-desc" style="display: block; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; margin-top: 4px;">${achievement.description}</span>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        // Regular achievement text
+                        return `
+                            <div class="timeline-achievement" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <i class='bx bx-check-circle' style="color: var(--accent); font-size: 1.1rem; flex-shrink: 0; margin-top: 3px;"></i>
+                                <span style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">${achievement}</span>
+                            </div>
+                        `;
+                    }
+                }).join('')}
+            </div>
+        ` : `<div class="timeline-desc" style="margin: 10px 0; color: var(--text-secondary);">${item.description}</div>`;
 
-        //         item.innerHTML = `
-        //   <div class="project-card">
-        //     <img src="${project.image}" alt="${project.title}" />
-        //     <div class="project-title">${project.title}</div>
-        //     <div class="project-desc-container">
-        //       <div class="project-desc truncated">${project.description}</div>
-        //          <button class="project-see-more">See More</button>
-        //     </div>
-     
-        //     <div class="project-techs">
-        //       ${project.technologies.map(tech => `<span class="project-tech">${tech}</span>`).join('')}
-        //     </div>
-        //     <div class="project-links">
-        //       ${project.links.map(link =>
-        //             `<a href="${link.href}" target="_blank"><i class="bx ${link.icon}"></i>${link.text}</a>`
-        //         ).join('')}
-        //     </div>
-        //   </div>
-        // `;
+        // Generate technologies HTML with clean, professional styling (showing as chips)
+        const technologiesHtml = item.technologies && item.technologies.length ? `
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0 5px 0; padding-top: 10px; border-top: 1px solid var(--border-color);">
+                ${item.technologies.map(tech => 
+                    `<span style="background: var(--bg); color: var(--text-secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--border-color); display: inline-block;">${tech}</span>`
+                ).join('')}
+            </div>
+        ` : '';
 
-        //         carousel.appendChild(item);
-        //     });
+        entry.innerHTML = `
+            <div class="circle"></div>
+            <div class="timeline-date" style="margin-bottom: 10px;">${item.date}</div>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+                <div class="timeline-role" style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary);">${item.role}</div>
+                ${certificateHtml}
+            </div>
+            <div class="timeline-company" style="margin-bottom: 5px;">
+                ${companyHtml}
+            </div>
+            ${achievementsHtml}
+            ${technologiesHtml ? `
+                <div style="margin-top: 20px;">
+                    <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; letter-spacing: 0.5px;">TECHNOLOGIES USED:</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        ${item.technologies.map(tech => 
+                            `<span style="background: var(--bg); color: var(--text-secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--border-color); display: inline-block;">${tech}</span>`
+                        ).join('')}
+                    </div>
+                </div>
+            ` : ''}
+        `;
 
-        //     // Add event listeners for "See More" buttons
-        //     document.querySelectorAll('.project-see-more').forEach(button => {
-        //         button.addEventListener('click', function() {
-        //             const desc = this.previousElementSibling.querySelector('.project-desc');
-        //             desc.classList.toggle('truncated');
-        //             this.textContent = desc.classList.contains('truncated') ? 'See More' : 'See Less';
-                    
-        //             // Force carousel refresh to handle height changes
-        //             if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
-        //                 $('.owl-carousel').trigger('refresh.owl.carousel');
-        //             }
-        //         });
-        //     });
-        // }
+        container.appendChild(entry);
+    });
+}
+
 
         function generateProjectCards() {
   const carousel = document.getElementById('projects-carousel');
