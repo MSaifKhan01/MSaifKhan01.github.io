@@ -1571,10 +1571,10 @@
                     <span style="color: var(--text-muted);">Contributions Period</span>
                     <span style="font-weight: 500; color: var(--text-secondary);">29 Nov 2022 - Present</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <!-- <div style="display: flex; justify-content: space-between; align-items: center;">
                     <span style="color: var(--text-muted);">Current Streak</span>
                     <span style="font-size: 1.3rem; font-weight: 600; color: #e17055;">0 days</span>
-                </div>
+                </div> -->
             </div>
         </div>
         
@@ -1619,7 +1619,7 @@
     <!-- Row 2: Streak Stats and Longest Streak -->
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
         <!-- Current Streak Card -->
-        <div style="background: linear-gradient(135deg, rgba(225, 112, 85, 0.1), rgba(225, 112, 85, 0.05)); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
+        <!-- <div style="background: linear-gradient(135deg, rgba(225, 112, 85, 0.1), rgba(225, 112, 85, 0.05)); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
             <h3 style="color: var(--secondary); margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
                 <i class='bx bx-fire' style="color: #e17055;"></i> Current Streak
             </h3>
@@ -1630,10 +1630,10 @@
             <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
                 Last active: 1 Mar 2026
             </div>
-        </div>
+        </div> -->
         
         <!-- Longest Streak Card -->
-        <div style="background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 184, 148, 0.05)); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
+        <!-- <div style="background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 184, 148, 0.05)); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
             <h3 style="color: var(--secondary); margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
                 <i class='bx bx-trophy' style="color: var(--accent);"></i> Longest Streak
             </h3>
@@ -1645,7 +1645,82 @@
                 10 Jul 2023 - 8 Sep 2023
             </div>
         </div>
+
+         <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color); text-align: center; width: 100%; max-width: 400px;">
+        <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class='bx bx-show' style="color: var(--accent);"></i> Profile Views
+        </h3>
+        <div style="display: inline-block; background: linear-gradient(135deg, var(--accent), var(--secondary)); padding: 20px 40px; border-radius: 50px;">
+            <span style="font-size: 2.5rem; font-weight: 700; color: white;">3,366</span>
+        </div>
+    </div> -->
+    
+
+    <!-- Longest Streak Card -->
+    <div style="flex: 1; min-width: 280px;
+                background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 184, 148, 0.05));
+                border-radius: 16px;
+                padding: 20px;
+                box-shadow: 0 8px 30px var(--shadow);
+                border: 1px solid var(--border-color);">
+
+        <h3 style="color: var(--secondary);
+                   margin-bottom: 10px;
+                   font-size: 1.1rem;
+                   display: flex;
+                   align-items: center;
+                   gap: 8px;">
+            <i class='bx bx-trophy' style="color: var(--accent);"></i>
+            Longest Streak
+        </h3>
+
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+            <span style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">
+                61
+            </span>
+            <span style="color: var(--text-muted);">days</span>
+        </div>
+
+        <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
+            10 Jul 2023 - 8 Sep 2023
+        </div>
     </div>
+
+
+    <!-- Profile Views Card -->
+    <div style="flex: 1; min-width: 280px;
+                background: var(--card-bg);
+                border-radius: 16px;
+                padding: 20px;
+                box-shadow: 0 8px 30px var(--shadow);
+                border: 1px solid var(--border-color);
+                text-align: center;">
+
+        <h3 style="color: var(--secondary);
+                   margin-bottom: 15px;
+                   font-size: 1.2rem;
+                   display: flex;
+                   align-items: center;
+                   justify-content: center;
+                   gap: 8px;">
+            <i class='bx bx-show' style="color: var(--accent);"></i>
+            Profile Views
+        </h3>
+
+        <div style="display: inline-block;
+                    background: linear-gradient(135deg, var(--accent), var(--secondary));
+                    padding: 20px 40px;
+                    border-radius: 50px;">
+
+            <span style="font-size: 2.5rem; font-weight: 700; color: white;">
+                3,366
+            </span>
+        </div>
+    </div>
+
+
+
+</div>
     
     <!-- Row 3: Top Contributed Repositories -->
     <!-- <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
@@ -1678,8 +1753,8 @@
     
     <!-- Row 4: Profile Views and GitHub Trophy -->
    <!-- Row 4: Profile Views (Centered) -->
-<div style="display: flex; justify-content: center; width: 100%;">
-    <!-- Profile Views -->
+<!-- <div style="display: flex; justify-content: center; width: 100%;">
+   
     <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color); text-align: center; width: 100%; max-width: 400px;">
         <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
             <i class='bx bx-show' style="color: var(--accent);"></i> Profile Views
@@ -1688,7 +1763,7 @@
             <span style="font-size: 2.5rem; font-weight: 700; color: white;">3,366</span>
         </div>
     </div>
-</div>
+</div> -->
 </section>
 
         <!-- Skills Section -->
@@ -2519,3 +2594,5 @@ console.log("=====res====",res)
 </body>
 
 </html>
+
+
