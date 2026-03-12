@@ -933,6 +933,115 @@
             transform: translateY(-3px);
         }
 
+        /* Resume Prompt Modal */
+        .resume-prompt-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .resume-prompt-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .resume-prompt {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            transform: translateY(30px) scale(0.95);
+            transition: all 0.3s ease;
+        }
+
+        .resume-prompt-overlay.active .resume-prompt {
+            transform: translateY(0) scale(1);
+        }
+
+        .resume-prompt h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .resume-prompt p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .resume-prompt-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .resume-prompt-btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .resume-prompt-btn.view {
+            background: var(--accent);
+            color: #fff;
+            border: 2px solid var(--accent);
+        }
+
+        .resume-prompt-btn.download {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .resume-prompt-btn.view:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .resume-prompt-btn.download:hover {
+            background: var(--secondary);
+            color: #fff;
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .resume-prompt-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .resume-prompt-close:hover {
+            color: var(--accent);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -1443,6 +1552,19 @@
         <i class='bx bx-chevron-up'></i>
     </div>
 
+    <!-- Resume Prompt Modal -->
+    <div class="resume-prompt-overlay" id="resumePromptOverlay">
+        <div class="resume-prompt">
+            <button class="resume-prompt-close" id="resumePromptClose"><i class='bx bx-x'></i></button>
+            <h3>View or Download Resume</h3>
+            <p>Would you like to view the resume online or download it?</p>
+            <div class="resume-prompt-buttons">
+                <button class="resume-prompt-btn view" id="resumeViewBtn">View</button>
+                <button class="resume-prompt-btn download" id="resumeDownloadBtn">Download</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal for Form Submission -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
@@ -1478,7 +1600,7 @@
                 <li><a href="#github">GitHub</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="Mohd Saif Khan-Resume.pdf" download class="btn-outline">Resume</a></li>
+                <li><a href="javascript:void(0);" onclick="handleResumeClick(event)" class="btn-outline">Resume</a></li>
             </ul>
             <button class="nav-btn" id="nav-btn"><i class='bx bx-menu'></i></button>
         </div>
@@ -1496,7 +1618,7 @@
         </p>
         <div class="hero-actions">
             <a href="#contact" class="btn">Hire Me</a>
-            <a href="Mohd Saif Khan-Resume.pdf" class="btn-outline" download>Download Resume</a>
+            <a href="javascript:void(0);" onclick="handleResumeClick(event)" class="btn-outline">Resume</a>
         </div>
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/mohd-saif-khan-3b4979202/" target="_blank"><i
@@ -1548,11 +1670,7 @@
         </section>
 
 
-       
-
-
-
-<section id="github">
+        <section id="github">
     <h2>GitHub Statistics</h2>
     
     <!-- Row 1: GitHub Stats Card and Top Languages -->
@@ -1571,10 +1689,7 @@
                     <span style="color: var(--text-muted);">Contributions Period</span>
                     <span style="font-weight: 500; color: var(--text-secondary);">29 Nov 2022 - Present</span>
                 </div>
-                <!-- <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--text-muted);">Current Streak</span>
-                    <span style="font-size: 1.3rem; font-weight: 600; color: #e17055;">0 days</span>
-                </div> -->
+           
             </div>
         </div>
         
@@ -1618,44 +1733,7 @@
     
     <!-- Row 2: Streak Stats and Longest Streak -->
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
-        <!-- Current Streak Card -->
-        <!-- <div style="background: linear-gradient(135deg, rgba(225, 112, 85, 0.1), rgba(225, 112, 85, 0.05)); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
-            <h3 style="color: var(--secondary); margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
-                <i class='bx bx-fire' style="color: #e17055;"></i> Current Streak
-            </h3>
-            <div style="display: flex; align-items: baseline; gap: 10px;">
-                <span style="font-size: 2.5rem; font-weight: 700; color: #e17055;">0</span>
-                <span style="color: var(--text-muted);">days</span>
-            </div>
-            <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
-                Last active: 1 Mar 2026
-            </div>
-        </div> -->
-        
-        <!-- Longest Streak Card -->
-        <!-- <div style="background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 184, 148, 0.05)); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
-            <h3 style="color: var(--secondary); margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
-                <i class='bx bx-trophy' style="color: var(--accent);"></i> Longest Streak
-            </h3>
-            <div style="display: flex; align-items: baseline; gap: 10px;">
-                <span style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">61</span>
-                <span style="color: var(--text-muted);">days</span>
-            </div>
-            <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
-                10 Jul 2023 - 8 Sep 2023
-            </div>
-        </div>
-
-         <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color); text-align: center; width: 100%; max-width: 400px;">
-        <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
-            <i class='bx bx-show' style="color: var(--accent);"></i> Profile Views
-        </h3>
-        <div style="display: inline-block; background: linear-gradient(135deg, var(--accent), var(--secondary)); padding: 20px 40px; border-radius: 50px;">
-            <span style="font-size: 2.5rem; font-weight: 700; color: white;">3,366</span>
-        </div>
-    </div> -->
     
-
     <!-- Longest Streak Card -->
     <div style="flex: 1; min-width: 280px;
                 background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 184, 148, 0.05));
@@ -1722,48 +1800,8 @@
 
 </div>
     
-    <!-- Row 3: Top Contributed Repositories -->
-    <!-- <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color);">
-        <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
-            <i class='bx bx-git-repo-forked' style="color: var(--accent);"></i> Top Contributed Repositories
-        </h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;">
-            <a href="https://github.com/MSaifKhan01/EdgeChains" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
-                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
-                <span style="font-weight: 500;">EdgeChains</span>
-            </a>
-            <a href="https://github.com/MSaifKhan01/COOL-CLOTH" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
-                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
-                <span style="font-weight: 500;">COOL-CLOTH</span>
-            </a>
-            <a href="https://github.com/MSaifKhan01/techWhiz" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
-                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
-                <span style="font-weight: 500;">techWhiz</span>
-            </a>
-            <a href="https://github.com/MSaifKhan01/parsimonious-dover-8073" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
-                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
-                <span style="font-weight: 500;">parsimonious-dover-8073</span>
-            </a>
-            <a href="https://github.com/MSaifKhan01/enormous-library-3081" target="_blank" style="background: var(--bg); padding: 12px 15px; border-radius: 12px; text-decoration: none; color: var(--text-primary); border: 1px solid var(--border-color); transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;">
-                <i class='bx bx-git-repo' style="color: var(--accent);"></i>
-                <span style="font-weight: 500;">enormous-library-3081</span>
-            </a>
-        </div>
-    </div> -->
-    
-    <!-- Row 4: Profile Views and GitHub Trophy -->
-   <!-- Row 4: Profile Views (Centered) -->
-<!-- <div style="display: flex; justify-content: center; width: 100%;">
-   
-    <div style="background: var(--card-bg); border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px var(--shadow); border: 1px solid var(--border-color); text-align: center; width: 100%; max-width: 400px;">
-        <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
-            <i class='bx bx-show' style="color: var(--accent);"></i> Profile Views
-        </h3>
-        <div style="display: inline-block; background: linear-gradient(135deg, var(--accent), var(--secondary)); padding: 20px 40px; border-radius: 50px;">
-            <span style="font-size: 2.5rem; font-weight: 700; color: white;">3,366</span>
-        </div>
-    </div>
-</div> -->
+  
+
 </section>
 
         <!-- Skills Section -->
@@ -1831,7 +1869,7 @@
                     <div class="info-row"><i class="bx bxl-linkedin"></i>
                         <div><span class="info-label">LinkedIn:</span><span class="info-value"><a
                                     href="https://www.linkedin.com/in/mohd-saif-khan-3b4979202/"
-                                    target="_blank">@LinkedIn</a></span></div>
+                                    target="_blank">mohd-saif-khan-3b4979202</a></span></div>
                     </div>
                     <div class="info-row"><i class="bx bxl-github"></i>
                         <div><span class="info-label">GitHub:</span><span class="info-value"><a
@@ -2112,6 +2150,48 @@ const educationData = [
                 ]
             }
         ];
+
+        // Resume Prompt Functionality
+        const resumePromptOverlay = document.getElementById('resumePromptOverlay');
+        const resumePromptClose = document.getElementById('resumePromptClose');
+        const resumeViewBtn = document.getElementById('resumeViewBtn');
+        const resumeDownloadBtn = document.getElementById('resumeDownloadBtn');
+
+        function handleResumeClick(event) {
+            event.preventDefault();
+            resumePromptOverlay.classList.add('active');
+        }
+
+        function closeResumePrompt() {
+            resumePromptOverlay.classList.remove('active');
+        }
+
+        function viewResume() {
+            window.open('Mohd Saif Khan-Resume.pdf', '_blank');
+            closeResumePrompt();
+        }
+
+        function downloadResume() {
+            const link = document.createElement('a');
+            link.href = 'Mohd Saif Khan-Resume.pdf';
+            link.download = 'Mohd Saif Khan-Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            closeResumePrompt();
+        }
+
+        // Event listeners for resume prompt
+        resumePromptClose.addEventListener('click', closeResumePrompt);
+        resumeViewBtn.addEventListener('click', viewResume);
+        resumeDownloadBtn.addEventListener('click', downloadResume);
+
+        // Close when clicking outside
+        resumePromptOverlay.addEventListener('click', function(e) {
+            if (e.target === resumePromptOverlay) {
+                closeResumePrompt();
+            }
+        });
 
         // Modal functionality
         const modalOverlay = document.getElementById('modalOverlay');
@@ -2594,5 +2674,3 @@ console.log("=====res====",res)
 </body>
 
 </html>
-
-
