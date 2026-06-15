@@ -2,16 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <!-- <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saif Khan | Full Stack Developer</title>
     <link rel="icon" type="image/png" href="images/Resume02.png">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+<link rel="preconnect" href="https://unpkg.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" /> -->
+
+
+         <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saif Khan | Full Stack Developer</title>
+    <link rel="icon" type="image/png" href="images/Resume02.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Critical CSS inline, non-critical loaded later -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+    <!-- Non-critical CSS loaded with media="print" then onload -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" media="print" onload="this.media='all'">
     <style>
         :root {
             /* Light Mode Colors */
@@ -588,13 +614,14 @@
             transition: max-height 0.3s ease;
         }
 
-        .project-desc.truncated {
-            max-height: 4.8em; /* 3 lines of text (1.6 line-height * 3) */
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-        }
+    .project-desc.truncated {
+    max-height: 4.8em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;  /* Add this line for future compatibility */
+}
 
         .project-see-more {
             color: var(--accent);
@@ -1609,7 +1636,8 @@
     <!-- Hero Section -->
     <section class="hero-section" id="home">
         <h1 class="hero-title">Mohd Saif Khan</h1>
-        <img class="hero-img" src="images/Self-Image-2.jpg" alt="Saif Khan" />
+        <!-- <img loading="lazy" class="hero-img" src="images/Self-Image-2.jpg" alt="Saif Khan" /> -->
+         <img width="260" height="260" loading="lazy" class="hero-img" src="images/Self-Image-2.jpg" alt="Saif Khan" />
 
         <div class="hero-role"><span id="typed-role">Full Stack Developer</span></div>
         <p class="hero-desc">
@@ -1808,41 +1836,41 @@
         <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg"
                         alt="HTML5" /><span>HTML5</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/w3_css/w3_css-ar21.svg"
                         alt="CSS3" /><span>CSS3</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/javascript/javascript-ar21.svg"
+                <div class="skill-card"><img  loading="lazy" src="https://www.vectorlogo.zone/logos/javascript/javascript-ar21.svg"
                         alt="JavaScript" /><span>JavaScript</span></div>
-                <div class="skill-card"><img
+                <div class="skill-card"><img loading="lazy"
                         src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-ar21.svg"
                         alt="TypeScript" /><span>TypeScript</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg"
                         alt="Node.js" /><span>Node.js</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg"
                         alt="Express.js" /><span>Express.js</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg"
                         alt="React" /><span>React</span></div>
-                <div class="skill-card"><img src="https://redux-toolkit.js.org/img/redux.svg" alt="Redux Toolkit"
+                <div class="skill-card"><img loading="lazy" src="https://redux-toolkit.js.org/img/redux.svg" alt="Redux Toolkit"
                         style="width: 50px; height: 50px; object-fit: contain;" /><span>Redux Toolkit</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg"
                         alt="MongoDB" /><span>MongoDB</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/python/python-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg"
                         alt>Python</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/getpostman/getpostman-ar21.svg"
                         alt="Postman" /><span>Postman</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/docker/docker-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/docker/docker-ar21.svg"
                         alt="Docker" /><span>Docker</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/redis/redis-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/redis/redis-ar21.svg"
                         alt="Redis" /><span>Redis</span></div>
                 <!-- <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" alt="AWS"/><span>AWS</span></div> -->
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/nestjs/nestjs-icon.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/nestjs/nestjs-icon.svg"
                         alt="NestJS" /><span>NestJS</span></div>
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg"
                         alt="MySQL" /><span>MySQL</span></div>
 
 
-                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/elastic/elastic-ar21.svg"
+                <div class="skill-card"><img loading="lazy" src="https://www.vectorlogo.zone/logos/elastic/elastic-ar21.svg"
                         alt="Elasticsearch" /><span>Elasticsearch</span></div>
             </div>
         </section>
@@ -1917,725 +1945,619 @@
     <!-- Toast Notification Element -->
     <div id="toast" class="toast"></div>
 
-    <!-- Scripts -->
-     
+
+<!--      
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
 
-    <script>
-
-
-        // Data Objects
+  
+</body>
 
 
+<!-- Move these just before </body> -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-// Data Objects
-const experienceData = [
-    {
-        date: "May 2025 – Present",
-        role: "Full Stack Developer",
-        company: "Labrys Solutions Pvt Ltd",
-        location: "Gurgaon, Haryana",
-        companyUrl: "https://labryssolutions.com/",
-        description: "Leading full-stack development for multiple enterprise applications using React, Node.js/Express, and modern databases.",
-        achievements: [
-            "Built scalable full-stack applications with React and Node.js/Express, integrating Razorpay payments, MongoDB, MySQL, Prisma, and AWS S3",
-            {
-                text: "LeaguePoolStats",
-                link: "https://leaguepoolstats.com/",
-                description: "Tournament booking platform with responsive React UI and integrated APIs for tournament and participant management."
-            },
-            {
-                text: "EMS Dashboard",
-                link: "https://soodprints.in/ems/",
-                description: "IoT-based metering solution with real-time dashboards, Built user dashboards for real-time meter activity and usage tracking, and developed admin and super-admin modules for meter management, user control, payment disbursement, and related operational features."
-            },
-            {
-                text: "HireIQ",
-                link: "https://www.hireiq.in/",
-                description: "Developed secure backend APIs and implemented end-to-end hiring workflows, integrating frontend and backend modules for candidate management."
-            }
-        ],
-        technologies: ["React", "Node.js", "Express", "MongoDB", "MySQL", "Prisma", "AWS S3", "Razorpay"],
-        actions: []
-    },
-    {
-        date: "Sep 2024 – Apr 2025",
-        role: "Software Development Engineer",
-        company: "DigiCraft Pvt Ltd",
-        location: "Delhi (Hybrid)",
-        companyUrl: "https://digicraft.ai/",
-        description: "Enhanced backend scalability and contributed to e-commerce platform development using modern technologies.",
-        achievements: [
-            "Built shopping cart and order management system from scratch using NestJS and MongoDB based on ONDC protocol specifications, with optimized database queries for improved performance",
-            "Designed and implemented Elasticsearch-based search functionality for products by name, category, and location, enhancing product discovery and user experience",
-            "Set up complete ONDC protocol integration from scratch—built the buyer application with request/response signing, encryption, and payload validation as per ONDC specifications, while exploring seller-side implementation when no codebase existed"
-        ],
-        technologies: ["NestJS", "Docker", "MongoDB", "Elasticsearch", "ONDC", "Microservices"],
-        actions: [
-            { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1ULYkRzzmVeQ90Gx3Sy1kOVGuW-bnvE3z/view?usp=sharing", secondary: true }
-        ]
-    },
-    {
-        date: "Jan 2024 – Mar 2024",
-        role: "NodeJS Backend Developer Intern",
-        company: "RedCarpet",
-        location: "Remote (Gurgaon, Haryana)",
-        companyUrl: "http://www.redcarpetup.com/",
-        description: "Integrated AI capabilities and developed interactive dashboards for intelligent feature delivery.",
-        achievements: [
-            "Utilized OpenAI GPT-4 APIs to implement generative AI features for enhanced user experience",
-            "Developed interactive dashboards using PostgreSQL, React, Express.js, and Node.js for data visualization",
-            "Worked with edgeChain and edgeCloud libraries at arakoo.ai to implement advanced AI-driven solutions",
-            "Integrated PostgreSQL databases with Express.js backend for efficient data management and retrieval",
-            {
-                text: "EdgeChains",
-                link: "https://github.com/arakoodev/EdgeChains/graphs/contributors",
-                description: "Contributed to EdgeChains library development at arakoo.ai"
-            }
-        ],
-        technologies: ["Node.js", "Express", "PostgreSQL", "React", "OpenAI GPT-4", "EdgeChain", "EdgeCloud"],
-        actions: [
-            { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1egn2V9mIuJkTjWCYFJarbfifQd8fok45/view", secondary: true }
-        ]
-    }
-];
-const educationData = [
-            {
-                date: "2020 – 2024",
-                role: "B.Tech in Electrical & Electronics Engineering",
-                company: "Bhabha Engineering Research Institute",
-                location: "Bhopal, M.P.",
-                companyUrl: "https://www.bhabhauniversity.edu.in/institute/2/",
-                description: "Completed a comprehensive engineering program, gaining a solid foundation in electronics, electrical systems, and programming fundamentals. This background strengthened my analytical skills and provided a strong technical base.",
-                actions: [
-                    // { text: "Degree Certificate", icon: "bx-medal", href: "#" },
-                    // { text: "Transcript", icon: "bx-file-pdf", href: "#", secondary: true },
-                    // { text: "Achievements", icon: "bx-trophy", href: "#", secondary: true }
-                ]
-            },
-            {
-                date: "Oct 2022 – Aug 2023",
-                role: "Full Stack Web Development",
-                company: "Masai School",
-                location: "Bengaluru (Online)",
-                companyUrl: "https://www.masaischool.com/",
-                description: "Intensive 1200+ hours bootcamp covering modern web development technologies, algorithms, data structures, and full-stack project development. Achieved 95% completion rate with distinction.",
-                actions: [
-                    // { text: "Completion Certificate", icon: "bx-certificate", href: "#" },
-                    // { text: "Projects Portfolio", icon: "bx-code-block", href: "#", secondary: true },
-                    // { text: "Performance Report", icon: "bx-star", href: "#", secondary: true }
-                ]
-            },
-            {
-                date: "2017 – 2020",
-                role: "Diploma in Electrical Engineering",
-                company: "Jamia Millia Islamia",
-                location: "Delhi",
-                companyUrl: "https://jmi.ac.in/",
-                description: "Foundation in electrical engineering principles, circuit design, power systems, and technical problem-solving. Graduated with honors and participated in multiple technical projects.",
-                actions: [
-                    // { text: "Diploma Certificate", icon: "bx-medal", href: "#" },
-                    // { text: "Final Transcript", icon: "bx-file-pdf", href: "#", secondary: true }
-                ]
-            }
-        ];
 
-        const projectsData = [
-            {
-                title: "Vegy-Food",
-                image: "portimage/vegyFood.png",
-                description: "Modern e-commerce platform with Google OAuth & OTP authentication, Nodemailer integration, and Stripe payment gateway. Includes a comprehensive admin dashboard, real-time order tracking, and an automated email notification system for a seamless shopping experience.",
-                technologies: ["Node.js", "OAuth", "Express.js", "MongoDB", "React", "Tailwind CSS", "Stripe Payment", "Vercel And Render"],
-                links: [
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://vegy-food.vercel.app/" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/Vegy-Food" }
-                ]
-            },
-            {
-                title: "FileDrive",
-                image: "portimage/FileDrive.png",
-                description: "Cloud-based file management system with AWS S3 integration, secure user authentication, and role-based access control. Users can seamlessly upload, download, and manage files, while admins have full control over user management and additional administrative actions.",
-                technologies: ["Node.js", "React", "AWS S3", "MongoDB", "CSS", "Netlify And Render"],
-                links: [
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://myfile-drive3.netlify.app/" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/FileDrive-Management-AWS" }
-                ]
-            },
-            {
-                title: "EduTaskHub",
-                image: "portimage/Edutaskhub.png",
-                description: "Educational platform connecting students and instructors with features like course enrollment, interactive learning modules, and comprehensive course management tools. Includes an admin panel for managing courses, users, and platform activities.",
-                technologies: ["Angular", "Django", "Python", "PostgreSQL", "Tailwind CSS", "Netlify And Render"],
-                links: [
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://edutaskhub-gi201.netlify.app/" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/EduTaskHub" }
-                ]
-            },
-            {
-                title: "Weather App",
-                image: "portimage/weatherApp.png",
-                description: "Comprehensive weather application with city-based search, JWT authentication, rate limiting for API calls, and detailed weather forecasting with interactive UI.",
-                technologies: ["React.js", "Express", "MongoDB", "Weather API", "Tailwind CSS", "Vercel And Render"],
-                links: [
-                    //   { text: "Live Demo", icon: "bx-link-external", href: "https://weather-05t.netlify.app/" },
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://weather-app-5038.vercel.app/" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/WEATHER-APP" }
-                ]
-            },
 
-            {
-                title: "My URL Shortner",
-                image: "./portimage/urlShortner.png",
-                description: "My URL Shortner project simplifies URL shortening, making long URLs more shareable on social media, emails, and beyond.",
-                technologies: ["React.js", "Tailwind CSS", "Node.js", "Express", " MongoDB Atlas", "Responsive", "Vercel And Render"],
-                links: [
-                    // { text: "Live Demo", icon: "bx-link-external", href: "https://url-minimizer02.netlify.app/" },
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://url-shortner-ten-sigma.vercel.app/" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/URL-Shortner/tree/main" }
-                ]
-            },
+<script>
+document.addEventListener('DOMContentLoaded', function() {
 
-            {
-                title: "MirrorMate",
-                image: "./images/MirrorMate.jpg",
-                description: "MirrorMate is a VideoCall,screen share and messaging    website users can seamlessly connect, chat, make video calls, and share their screens in real-time. This is a collaborative project built by a team of 5 members in 5 days.",
-                technologies: ["HTML5", "CSS3", "JavaScript", "Socket.IO", "WebRTC", "Node.js", "Express", "Responsive", "Netlify And Render"],
-                links: [
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://mirror-meet.netlify.app" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/MirrorMate" }
-                ]
-            },
-
-            {
-                title: "TAK-Store",
-                image: "./portimage/Tak.png",
-                description: "Feature-rich e-commerce application with OAuth authentication, advanced search functionality, shopping cart management, and integrated payment processing system.",
-                technologies: ["Node.js", "Express", "HTML5", "CSS", "MongoDB", "OAuth", "Netlify And Render"],
-                links: [
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://tak-store.netlify.app" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/polite-teeth-64" }
-                ]
-            },
-            {
-                title: "COOL-CLOTH",
-                image: "https://user-images.githubusercontent.com/63779583/221470810-0d7cb71f-f97e-44a7-afcb-6a2b87ca40e4.png",
-                description: "COOL-CLOTH is an E-Commerce website that sellsvariety of product like clothes , shoes etc.This is a collaborative project built by a team of 5 members in 5 days.",
-                technologies: ["HTML5", "CSS3", "JavaScript", "REST API", "Responsive", "Netlify And Cyclic"],
-                links: [
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://bucolic-malasada-a43ddd.netlify.app/" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/COOL-CLOTH" }
-                ]
-            },
-
-            {
-                title: "TODO App",
-                image: "./portimage/TODO.png",
-                description: "TODO App is a React.js TODO App featuring components for product management, user profiles, and authentication",
-                technologies: ["React.js", "CSS", "Node.js", "Express", " MongoDB Atlas", "Responsive"],
-                links: [
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://todo5038.netlify.app/" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/TODO-ReactApp-01" }
-                ]
-            },
-
-            {
-                title: "E-Store",
-                image: "./images/firstProject.jpg",
-                description: "This is an E-Commerce Web where you can buy electrical and electronics appliances.This is an individual project built in 5 days and This is my first project. This was my second project.",
-                technologies: ["HTML", "CSS", "JavaScript", "Responsive"],
-                links: [
-                    { text: "Live Demo", icon: "bx-link-external", href: "https://iridescent-moonbeam-f50f3a.netlify.app" },
-                    { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/parsimonious-clover-8073" }
-                ]
-            }
-        ];
-
-        // Resume Prompt Functionality
-        const resumePromptOverlay = document.getElementById('resumePromptOverlay');
-        const resumePromptClose = document.getElementById('resumePromptClose');
-        const resumeViewBtn = document.getElementById('resumeViewBtn');
-        const resumeDownloadBtn = document.getElementById('resumeDownloadBtn');
-
-        function handleResumeClick(event) {
-            event.preventDefault();
-            resumePromptOverlay.classList.add('active');
+    // Data Objects
+    const experienceData = [
+        {
+            date: "May 2025 – Present",
+            role: "Full Stack Developer",
+            company: "Labrys Solutions Pvt Ltd",
+            location: "Gurgaon, Haryana",
+            companyUrl: "https://labryssolutions.com/",
+            description: "Working as a Full Stack Developer at Labrys Solutions and internally transferred to Lapulse Innovations LLP (Dec 2025). Developing IoT-based Energy Management Systems (EMS), enterprise web applications, and payment gateway solutions using React.js, Node.js, MongoDB, MySQL, and Prisma.",
+            achievements: [
+                "Working as a Full Stack Developer at Labrys Solutions and internally transferred to Lapulse Innovations LLP (Dec 2025) And Developed scalable full-stack applications using React.js, Node.js, Express.js, MongoDB, MySQL, and Prisma.",
+                {
+                    text: "EMS Dashboard",
+                    link: "https://soodprints.in/ems/",
+                    description: "Built an IoT-based Energy Management System (EMS) for real-time smart meter monitoring, energy usage tracking, recharge management, usage history, and meter administration."
+                },
+                {
+                    text: "LeaguePoolStats",
+                    link: "https://leaguepoolstats.com/",
+                    description: "Developed tournament management features and integrated APIs for participant, booking, and competition workflows."
+                },
+                {
+                    text: "HireIQ",
+                    link: "https://www.hireiq.in/",
+                    description: "Built secure backend APIs and implemented recruitment workflows for candidate and hiring lifecycle management."
+                },
+                "Integrated PayPal and Razorpay payment gateways and explored Westpac HPP integration and payment workflows."
+            ],
+            technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "MySQL", "Prisma", "PayPal", "Razorpay", "Westpac", "REST APIs"],
+            actions: []
+        },
+        {
+            date: "Sep 2024 – Apr 2025",
+            role: "Software Development Engineer",
+            company: "DigiCraft Pvt Ltd",
+            location: "Delhi (Hybrid)",
+            companyUrl: "https://digicraft.ai/",
+            description: "Enhanced backend scalability and contributed to e-commerce platform development using modern technologies.",
+            achievements: [
+                "Built shopping cart and order management system from scratch using NestJS and MongoDB based on ONDC protocol specifications, with optimized database queries for improved performance",
+                "Designed and implemented Elasticsearch-based search functionality for products by name, category, and location, enhancing product discovery and user experience",
+                "Set up complete ONDC protocol integration from scratch—built the buyer application with request/response signing, encryption, and payload validation as per ONDC specifications, while exploring seller-side implementation when no codebase existed"
+            ],
+            technologies: ["NestJS", "Docker", "MongoDB", "Elasticsearch", "ONDC", "Microservices"],
+            actions: [
+                { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1ULYkRzzmVeQ90Gx3Sy1kOVGuW-bnvE3z/view?usp=sharing", secondary: true }
+            ]
+        },
+        {
+            date: "Jan 2024 – Mar 2024",
+            role: "NodeJS Backend Developer Intern",
+            company: "RedCarpet",
+            location: "Remote (Gurgaon, Haryana)",
+            companyUrl: "http://www.redcarpetup.com/",
+            description: "Integrated AI capabilities and developed interactive dashboards for intelligent feature delivery.",
+            achievements: [
+                "Utilized OpenAI GPT-4 APIs to implement generative AI features for enhanced user experience",
+                "Developed interactive dashboards using PostgreSQL, React, Express.js, and Node.js for data visualization",
+                "Worked with edgeChain and edgeCloud libraries at arakoo.ai to implement advanced AI-driven solutions",
+                "Integrated PostgreSQL databases with Express.js backend for efficient data management and retrieval",
+                {
+                    text: "EdgeChains",
+                    link: "https://github.com/arakoodev/EdgeChains/graphs/contributors",
+                    description: "Contributed to EdgeChains library development at arakoo.ai"
+                }
+            ],
+            technologies: ["Node.js", "Express", "PostgreSQL", "React", "OpenAI GPT-4", "EdgeChain", "EdgeCloud"],
+            actions: [
+                { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1egn2V9mIuJkTjWCYFJarbfifQd8fok45/view", secondary: true }
+            ]
         }
+    ];
 
-        function closeResumePrompt() {
-            resumePromptOverlay.classList.remove('active');
+    const educationData = [
+        {
+            date: "2020 – 2024",
+            role: "B.Tech in Electrical & Electronics Engineering",
+            company: "Bhabha Engineering Research Institute",
+            location: "Bhopal, M.P.",
+            companyUrl: "https://www.bhabhauniversity.edu.in/institute/2/",
+            description: "Completed a comprehensive engineering program, gaining a solid foundation in electronics, electrical systems, and programming fundamentals. This background strengthened my analytical skills and provided a strong technical base.",
+            actions: []
+        },
+        {
+            date: "Oct 2022 – Aug 2023",
+            role: "Full Stack Web Development",
+            company: "Masai School",
+            location: "Bengaluru (Online)",
+            companyUrl: "https://www.masaischool.com/",
+            description: "Intensive 1200+ hours bootcamp covering modern web development technologies, algorithms, data structures, and full-stack project development. Achieved 95% completion rate with distinction.",
+            actions: []
+        },
+        {
+            date: "2017 – 2020",
+            role: "Diploma in Electrical Engineering",
+            company: "Jamia Millia Islamia",
+            location: "Delhi",
+            companyUrl: "https://jmi.ac.in/",
+            description: "Foundation in electrical engineering principles, circuit design, power systems, and technical problem-solving. Graduated with honors and participated in multiple technical projects.",
+            actions: []
         }
+    ];
 
-        function viewResume() {
-            window.open('Mohd Saif Khan-Resume.pdf', '_blank');
-            closeResumePrompt();
+    const projectsData = [
+        {
+            title: "Vegy-Food",
+            image: "portimage/vegyFood.png",
+            description: "Modern e-commerce platform with Google OAuth & OTP authentication, Nodemailer integration, and Stripe payment gateway. Includes a comprehensive admin dashboard, real-time order tracking, and an automated email notification system for a seamless shopping experience.",
+            technologies: ["Node.js", "OAuth", "Express.js", "MongoDB", "React", "Tailwind CSS", "Stripe Payment", "Vercel And Render"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://vegy-food.vercel.app/" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/Vegy-Food" }
+            ]
+        },
+        {
+            title: "FileDrive",
+            image: "portimage/FileDrive.png",
+            description: "Cloud-based file management system with AWS S3 integration, secure user authentication, and role-based access control. Users can seamlessly upload, download, and manage files, while admins have full control over user management and additional administrative actions.",
+            technologies: ["Node.js", "React", "AWS S3", "MongoDB", "CSS", "Netlify And Render"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://myfile-drive3.netlify.app/" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/FileDrive-Management-AWS" }
+            ]
+        },
+        {
+            title: "EduTaskHub",
+            image: "portimage/Edutaskhub.png",
+            description: "Educational platform connecting students and instructors with features like course enrollment, interactive learning modules, and comprehensive course management tools. Includes an admin panel for managing courses, users, and platform activities.",
+            technologies: ["Angular", "Django", "Python", "PostgreSQL", "Tailwind CSS", "Netlify And Render"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://edutaskhub-gi201.netlify.app/" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/EduTaskHub" }
+            ]
+        },
+        {
+            title: "Weather App",
+            image: "portimage/weatherApp.png",
+            description: "Comprehensive weather application with city-based search, JWT authentication, rate limiting for API calls, and detailed weather forecasting with interactive UI.",
+            technologies: ["React.js", "Express", "MongoDB", "Weather API", "Tailwind CSS", "Vercel And Render"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://weather-app-5038.vercel.app/" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/WEATHER-APP" }
+            ]
+        },
+        {
+            title: "My URL Shortner",
+            image: "./portimage/urlShortner.png",
+            description: "My URL Shortner project simplifies URL shortening, making long URLs more shareable on social media, emails, and beyond.",
+            technologies: ["React.js", "Tailwind CSS", "Node.js", "Express", " MongoDB Atlas", "Responsive", "Vercel And Render"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://url-shortner-ten-sigma.vercel.app/" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/URL-Shortner/tree/main" }
+            ]
+        },
+        {
+            title: "MirrorMate",
+            image: "./images/MirrorMate.jpg",
+            description: "MirrorMate is a VideoCall,screen share and messaging website users can seamlessly connect, chat, make video calls, and share their screens in real-time. This is a collaborative project built by a team of 5 members in 5 days.",
+            technologies: ["HTML5", "CSS3", "JavaScript", "Socket.IO", "WebRTC", "Node.js", "Express", "Responsive", "Netlify And Render"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://mirror-meet.netlify.app" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/MirrorMate" }
+            ]
+        },
+        {
+            title: "TAK-Store",
+            image: "./portimage/Tak.png",
+            description: "Feature-rich e-commerce application with OAuth authentication, advanced search functionality, shopping cart management, and integrated payment processing system.",
+            technologies: ["Node.js", "Express", "HTML5", "CSS", "MongoDB", "OAuth", "Netlify And Render"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://tak-store.netlify.app" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/polite-teeth-64" }
+            ]
+        },
+        {
+            title: "COOL-CLOTH",
+            image: "https://user-images.githubusercontent.com/63779583/221470810-0d7cb71f-f97e-44a7-afcb-6a2b87ca40e4.png",
+            description: "COOL-CLOTH is an E-Commerce website that sellsvariety of product like clothes , shoes etc.This is a collaborative project built by a team of 5 members in 5 days.",
+            technologies: ["HTML5", "CSS3", "JavaScript", "REST API", "Responsive", "Netlify And Cyclic"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://bucolic-malasada-a43ddd.netlify.app/" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/COOL-CLOTH" }
+            ]
+        },
+        {
+            title: "TODO App",
+            image: "./portimage/TODO.png",
+            description: "TODO App is a React.js TODO App featuring components for product management, user profiles, and authentication",
+            technologies: ["React.js", "CSS", "Node.js", "Express", " MongoDB Atlas", "Responsive"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://todo5038.netlify.app/" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/TODO-ReactApp-01" }
+            ]
+        },
+        {
+            title: "E-Store",
+            image: "./images/firstProject.jpg",
+            description: "This is an E-Commerce Web where you can buy electrical and electronics appliances.This is an individual project built in 5 days and This is my first project. This was my second project.",
+            technologies: ["HTML", "CSS", "JavaScript", "Responsive"],
+            links: [
+                { text: "Live Demo", icon: "bx-link-external", href: "https://iridescent-moonbeam-f50f3a.netlify.app" },
+                { text: "Source Code", icon: "bxl-github", href: "https://github.com/MSaifKhan01/parsimonious-clover-8073" }
+            ]
         }
+    ];
 
-        function downloadResume() {
-            const link = document.createElement('a');
-            link.href = 'Mohd Saif Khan-Resume.pdf';
-            link.download = 'Mohd Saif Khan-Resume.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            closeResumePrompt();
+    // Function to generate timeline entries
+    function generateTimelineEntries(data, containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) {
+            console.error("Container not found:", containerId);
+            return;
         }
+        container.innerHTML = '';
 
-        // Event listeners for resume prompt
-        resumePromptClose.addEventListener('click', closeResumePrompt);
-        resumeViewBtn.addEventListener('click', viewResume);
-        resumeDownloadBtn.addEventListener('click', downloadResume);
+        data.forEach(item => {
+            const entry = document.createElement('div');
+            entry.className = 'timeline-entry';
 
-        // Close when clicking outside
-        resumePromptOverlay.addEventListener('click', function(e) {
-            if (e.target === resumePromptOverlay) {
-                closeResumePrompt();
-            }
-        });
-
-        // Modal functionality
-        const modalOverlay = document.getElementById('modalOverlay');
-        const modalClose = document.getElementById('modalClose');
-        const modalIcon = document.getElementById('modalIcon');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalMessage = document.getElementById('modalMessage');
-        const modalTimer = document.getElementById('modalTimer');
-        const modalProgress = document.getElementById('modalProgress');
-        const modalOkBtn = document.getElementById('modalOkBtn');
-        const modalCancelBtn = document.getElementById('modalCancelBtn');
-        const modalActions = document.getElementById('modalActions');
-
-        let timerInterval;
-        let secondsElapsed = 0;
-        const maxWaitTime = 120; // 2 minutes
-        let autoCloseTimeout;
-
-        function showModal() {
-            modalOverlay.classList.add('active');
-            secondsElapsed = 0;
-            modalTimer.textContent = `Time elapsed: 0s`;
-            modalProgress.style.width = '0%';
-            modalIcon.className = 'bx bx-time';
-            modalTitle.textContent = 'Sending Your Message';
-            // modalMessage.textContent = 'Please wait while we process your request. This may take up to 2 minutes as we\'re using a free hosting server. Thats why it taks time ';
-
-            modalMessage.textContent = "Please wait while we process your request. This may take up to 2 minutes because we are using a free hosting server, which is why it takes longer.";
-
-            modalOkBtn.style.display = 'none';
-            modalCancelBtn.style.display = 'block';
-            
-            // Start timer
-            clearInterval(timerInterval);
-            timerInterval = setInterval(updateTimer, 1000);
-        }
-
-        function hideModal() {
-            modalOverlay.classList.remove('active');
-            clearInterval(timerInterval);
-            clearTimeout(autoCloseTimeout);
-        }
-
-        function updateTimer() {
-            secondsElapsed++;
-            modalTimer.textContent = `Time elapsed: ${secondsElapsed}s`;
-            const progressPercent = (secondsElapsed / maxWaitTime) * 100;
-            modalProgress.style.width = `${Math.min(progressPercent, 100)}%`;
-            
-            if (secondsElapsed >= maxWaitTime) {
-                clearInterval(timerInterval);
-                modalIcon.className = 'bx bx-error';
-                modalTitle.textContent = 'Server Timeout';
-                modalMessage.textContent = 'The server is taking longer than expected to respond. Please try again in a few moments.';
-                modalOkBtn.style.display = 'block';
-                modalCancelBtn.style.display = 'none';
-            }
-        }
-
-        function showSuccessModal(message) {
-            clearInterval(timerInterval);
-            modalIcon.className = 'bx bx-check-circle';
-            modalTitle.textContent = 'Message Sent Successfully!';
-            modalMessage.textContent = message;
-            modalProgress.style.width = '100%';
-            modalOkBtn.style.display = 'block';
-            modalCancelBtn.style.display = 'none';
-            
-            // Auto close after 3 seconds
-            autoCloseTimeout = setTimeout(hideModal, 3000);
-        }
-
-        function showErrorModal(message) {
-            clearInterval(timerInterval);
-            modalIcon.className = 'bx bx-error';
-            modalTitle.textContent = 'Error Sending Message';
-            modalMessage.textContent = message;
-            modalOkBtn.style.display = 'block';
-            modalCancelBtn.style.display = 'none';
-            
-            // Auto close after 5 seconds
-            autoCloseTimeout = setTimeout(hideModal, 5000);
-        }
-
-        // Event listeners for modal
-        modalClose.addEventListener('click', hideModal);
-        modalOkBtn.addEventListener('click', hideModal);
-        modalCancelBtn.addEventListener('click', hideModal);
-
- 
-
-// Function to generate timeline entries with enhanced UI and clickable project links
-function generateTimelineEntries(data, containerId) {
-    const container = document.getElementById(containerId);
-    container.innerHTML = '';
-
-    data.forEach(item => {
-        const entry = document.createElement('div');
-        entry.className = 'timeline-entry';
-
-        // Create certificate HTML separately
-        const certificateHtml = item.actions && item.actions.length ? `
-            <div style="display: flex; gap: 8px;">
-                ${item.actions.map(action =>
-                    `<a href="${action.href}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px; background: ${action.secondary ? 'transparent' : 'var(--accent)'}; color: ${action.secondary ? 'var(--secondary)' : '#fff'}; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; text-decoration: none; border: 1px solid ${action.secondary ? 'var(--secondary)' : 'var(--accent)'}; transition: all 0.3s ease;">
-                        <i class='bx ${action.icon}' style="font-size: 0.9rem;"></i>${action.text}
-                    </a>`
-                ).join('')}
-            </div>
-        ` : '';
-
-        // Create company HTML (now without certificate)
-        let companyHtml;
-        if (item.companyUrl) {
-            companyHtml = `
-                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
-                    <a href="${item.companyUrl}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--secondary); text-decoration: none;">${item.company}</a>
-                    <span style="color: var(--text-muted); font-size: 0.9rem;">${item.location}</span>
+            const certificateHtml = item.actions && item.actions.length ? `
+                <div style="display: flex; gap: 8px;">
+                    ${item.actions.map(action =>
+                        `<a href="${action.href}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px; background: ${action.secondary ? 'transparent' : 'var(--accent)'}; color: ${action.secondary ? 'var(--secondary)' : '#fff'}; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; text-decoration: none; border: 1px solid ${action.secondary ? 'var(--secondary)' : 'var(--accent)'};">
+                            <i class='bx ${action.icon}' style="font-size: 0.9rem;"></i>${action.text}
+                        </a>`
+                    ).join('')}
                 </div>
-            `;
-        } else {
-            companyHtml = `
-                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
-                    <span style="font-weight: 600; color: var(--secondary);">${item.company}</span>
-                    <span style="color: var(--text-muted); font-size: 0.9rem;">${item.location}</span>
-                </div>
-            `;
-        }
+            ` : '';
 
-        // Generate achievements HTML with support for linked projects and proper vertical spacing
-        const achievementsHtml = item.achievements ? `
-            <div class="timeline-achievements" style="margin: 15px 0 10px 0;">
-                ${item.achievements.map(achievement => {
-                    if (typeof achievement === 'object' && achievement.link) {
-                        // This is a project with a link
-                        return `
-                            <div class="timeline-achievement project-item" style="margin-bottom: 12px; padding-left: 5px;">
-                                <div class="project-details">
-                                    <a href="${achievement.link}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--accent); text-decoration: none; display: inline-block; align-items: center; gap: 4px;">
-                                        ${achievement.text} <i class='bx bx-link-external' style="font-size: 0.9rem;"></i>
-                                    </a>
-                                    <span class="project-desc" style="display: block; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; margin-top: 4px;">${achievement.description}</span>
+            let companyHtml;
+            if (item.companyUrl) {
+                companyHtml = `
+                    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                        <a href="${item.companyUrl}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--secondary); text-decoration: none;">${item.company}</a>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">${item.location}</span>
+                    </div>
+                `;
+            } else {
+                companyHtml = `
+                    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                        <span style="font-weight: 600; color: var(--secondary);">${item.company}</span>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">${item.location}</span>
+                    </div>
+                `;
+            }
+
+            const achievementsHtml = item.achievements ? `
+                <div class="timeline-achievements" style="margin: 15px 0 10px 0;">
+                    ${item.achievements.map(achievement => {
+                        if (typeof achievement === 'object' && achievement.link) {
+                            return `
+                                <div class="timeline-achievement project-item" style="margin-bottom: 12px; padding-left: 5px;">
+                                    <div class="project-details">
+                                        <a href="${achievement.link}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--accent); text-decoration: none; display: inline-block; align-items: center; gap: 4px;">
+                                            ${achievement.text} <i class='bx bx-link-external' style="font-size: 0.9rem;"></i>
+                                        </a>
+                                        <span class="project-desc" style="display: block; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; margin-top: 4px;">${achievement.description}</span>
+                                    </div>
                                 </div>
-                            </div>
-                        `;
-                    } else {
-                        // Regular achievement text
-                        return `
-                            <div class="timeline-achievement" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
-                                <i class='bx bx-check-circle' style="color: var(--accent); font-size: 1.1rem; flex-shrink: 0; margin-top: 3px;"></i>
-                                <span style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">${achievement}</span>
-                            </div>
-                        `;
-                    }
-                }).join('')}
-            </div>
-        ` : `<div class="timeline-desc" style="margin: 10px 0; color: var(--text-secondary);">${item.description}</div>`;
+                            `;
+                        } else {
+                            return `
+                                <div class="timeline-achievement" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                    <i class='bx bx-check-circle' style="color: var(--accent); font-size: 1.1rem; flex-shrink: 0; margin-top: 3px;"></i>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">${achievement}</span>
+                                </div>
+                            `;
+                        }
+                    }).join('')}
+                </div>
+            ` : `<div class="timeline-desc" style="margin: 10px 0; color: var(--text-secondary);">${item.description}</div>`;
 
-        // Generate technologies HTML with clean, professional styling (showing as chips)
-        const technologiesHtml = item.technologies && item.technologies.length ? `
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0 5px 0; padding-top: 10px; border-top: 1px solid var(--border-color);">
-                ${item.technologies.map(tech => 
-                    `<span style="background: var(--bg); color: var(--text-secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--border-color); display: inline-block;">${tech}</span>`
-                ).join('')}
-            </div>
-        ` : '';
+            const technologiesHtml = item.technologies && item.technologies.length ? `
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0 5px 0; padding-top: 10px; border-top: 1px solid var(--border-color);">
+                    ${item.technologies.map(tech => 
+                        `<span style="background: var(--bg); color: var(--text-secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--border-color); display: inline-block;">${tech}</span>`
+                    ).join('')}
+                </div>
+            ` : '';
 
-        entry.innerHTML = `
-            <div class="circle"></div>
-            <div class="timeline-date" style="margin-bottom: 10px;">${item.date}</div>
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
-                <div class="timeline-role" style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary);">${item.role}</div>
-                ${certificateHtml}
-            </div>
-            <div class="timeline-company" style="margin-bottom: 5px;">
-                ${companyHtml}
-            </div>
-            ${achievementsHtml}
-            ${technologiesHtml ? `
-                <div style="margin-top: 20px;">
-                    <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; letter-spacing: 0.5px;">TECHNOLOGIES USED:</div>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        ${item.technologies.map(tech => 
-                            `<span style="background: var(--bg); color: var(--text-secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--border-color); display: inline-block;">${tech}</span>`
+            entry.innerHTML = `
+                <div class="circle"></div>
+                <div class="timeline-date" style="margin-bottom: 10px;">${item.date}</div>
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+                    <div class="timeline-role" style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary);">${item.role}</div>
+                    ${certificateHtml}
+                </div>
+                <div class="timeline-company" style="margin-bottom: 5px;">
+                    ${companyHtml}
+                </div>
+                ${achievementsHtml}
+                ${technologiesHtml ? `
+                    <div style="margin-top: 20px;">
+                        <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; letter-spacing: 0.5px;">TECHNOLOGIES USED:</div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            ${item.technologies.map(tech => 
+                                `<span style="background: var(--bg); color: var(--text-secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--border-color); display: inline-block;">${tech}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+            `;
+            container.appendChild(entry);
+        });
+    }
+
+    function generateProjectCards() {
+        const carousel = document.getElementById('projects-carousel');
+        if (!carousel) return;
+        carousel.innerHTML = '';
+
+        projectsData.forEach(project => {
+            const item = document.createElement('div');
+            item.className = 'item';
+            item.innerHTML = `
+                <div class="project-card">
+                    <img loading="lazy" src="${project.image}" alt="${project.title}" />
+                    <div class="project-title">${project.title}</div>
+                    <div class="project-desc-container">
+                        <div class="project-desc truncated">${project.description}</div>
+                        <button class="project-see-more" type="button">See More</button>
+                    </div>
+                    <div class="project-techs">
+                        ${project.technologies.map(tech => `<span class="project-tech">${tech}</span>`).join('')}
+                    </div>
+                    <div class="project-links">
+                        ${project.links.map(link =>
+                            `<a href="${link.href}" target="_blank" rel="noopener noreferrer"><i class="bx ${link.icon}"></i>${link.text}</a>`
                         ).join('')}
                     </div>
                 </div>
-            ` : ''}
-        `;
+            `;
+            carousel.appendChild(item);
+        });
 
-        container.appendChild(entry);
-    });
-}
-
-
-        function generateProjectCards() {
-  const carousel = document.getElementById('projects-carousel');
-  carousel.innerHTML = '';
-
-  projectsData.forEach(project => {
-    const item = document.createElement('div');
-    item.className = 'item';
-
-    item.innerHTML = `
-      <div class="project-card">
-        <img src="${project.image}" alt="${project.title}" />
-        <div class="project-title">${project.title}</div>
-
-        <div class="project-desc-container">
-          <div class="project-desc truncated">${project.description}</div>
-          <button class="project-see-more" type="button">See More</button>
-        </div>
-
-        <div class="project-techs">
-          ${project.technologies.map(tech => `<span class="project-tech">${tech}</span>`).join('')}
-        </div>
-
-        <div class="project-links">
-          ${project.links.map(link =>
-            `<a href="${link.href}" target="_blank" rel="noopener noreferrer"><i class="bx ${link.icon}"></i>${link.text}</a>`
-          ).join('')}
-        </div>
-      </div>
-    `;
-    carousel.appendChild(item);
-  });
-
-  // Event delegation: attach one listener to the carousel container
-  carousel.addEventListener('click', function (e) {
-    const btn = e.target.closest('.project-see-more');
-    if (!btn) return;
-
-    const container = btn.closest('.project-desc-container');
-    const desc = container && container.querySelector('.project-desc');
-    if (!desc) return;
-
-    desc.classList.toggle('truncated');
-    btn.textContent = desc.classList.contains('truncated') ? 'See More' : 'See Less';
-
-    // Refresh Owl carousel only if you're actually using it on this element
-    if (typeof $ !== 'undefined' && $.fn && $.fn.owlCarousel) {
-      $('#projects-carousel').trigger('refresh.owl.carousel');
+        carousel.addEventListener('click', function(e) {
+            const btn = e.target.closest('.project-see-more');
+            if (!btn) return;
+            const container = btn.closest('.project-desc-container');
+            const desc = container && container.querySelector('.project-desc');
+            if (!desc) return;
+            desc.classList.toggle('truncated');
+            btn.textContent = desc.classList.contains('truncated') ? 'See More' : 'See Less';
+            if (typeof $ !== 'undefined' && $.fn && $.fn.owlCarousel) {
+                $('#projects-carousel').trigger('refresh.owl.carousel');
+            }
+        });
     }
-  });
-}
 
-        // Theme Toggle Function
-        function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-
-            if (body.getAttribute('data-theme') === 'light') {
-                body.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'bx bx-sun';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.setAttribute('data-theme', 'light');
-                themeIcon.className = 'bx bx-moon';
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // Load saved theme
-        document.addEventListener('DOMContentLoaded', function () {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            const themeIcon = document.getElementById('theme-icon');
-
-            document.body.setAttribute('data-theme', savedTheme);
-            themeIcon.className = savedTheme === 'dark' ? 'bx bx-sun' : 'bx bx-moon';
-
-            // Generate dynamic content
-            generateTimelineEntries(experienceData, 'experience-timeline');
-            generateTimelineEntries(educationData, 'education-timeline');
-            generateProjectCards();
-
-            // Initialize Owl Carousel after projects are loaded
-            initializeCarousel();
-        });
-
-        // Mobile Navigation Toggle
-        const navBtn = document.getElementById('nav-btn');
-        const navLinks = document.getElementById('nav-links');
-
-        navBtn.addEventListener('click', function () {
-            navLinks.classList.toggle('open');
-        });
-
-        // Close mobile menu when clicking on links
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function () {
-                navLinks.classList.remove('open');
-            });
-        });
-
-        // Active navigation link highlighting
-        window.addEventListener('scroll', function () {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Back to Top Button
-        const backToTopBtn = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Typed text effect for hero role
-        const roles = [
-            'Full Stack Developer',
-            'MERN Stack Developer',
-            'Backend Developer',
-            'Frontend Developer',
-            'Node.js Developer',
-            'React Developer',
-        ];
-
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typedElement = document.getElementById('typed-role');
-
-        function typeRole() {
-            const currentRole = roles[roleIndex];
-
-            if (isDeleting) {
-                typedElement.textContent = currentRole.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typedElement.textContent = currentRole.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && charIndex === currentRole.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-                typeSpeed = 500;
-            }
-
-            setTimeout(typeRole, typeSpeed);
-        }
-
-        // Start typing animation
-        setTimeout(typeRole, 1000);
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Initialize Owl Carousel
-        function initializeCarousel() {
+    function initializeCarousel() {
+        if (typeof $ !== 'undefined' && $.fn && $.fn.owlCarousel) {
             $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 30,
                 nav: true,
                 dots: true,
-                responsive: {
-                    0: { items: 1 },
-                    600: { items: 2 },
-                    1000: { items: 3 }
-                }
+                responsive: { 0: { items: 1 }, 600: { items: 2 }, 1000: { items: 3 } }
             });
         }
+    }
 
-        // Toast notification function
-        function showToast(message, type = "success") {
-            const toast = document.getElementById("toast");
-            toast.textContent = message;
-            toast.className = `toast show ${type}`;
+    // Resume Prompt Functionality
+    const resumePromptOverlay = document.getElementById('resumePromptOverlay');
+    const resumePromptClose = document.getElementById('resumePromptClose');
+    const resumeViewBtn = document.getElementById('resumeViewBtn');
+    const resumeDownloadBtn = document.getElementById('resumeDownloadBtn');
 
-            // Hide after 3 seconds
-            setTimeout(() => {
-                toast.className = "toast";
-            }, 3000);
+    window.handleResumeClick = function(event) {
+        event.preventDefault();
+        if (resumePromptOverlay) resumePromptOverlay.classList.add('active');
+    };
+
+    function closeResumePrompt() {
+        if (resumePromptOverlay) resumePromptOverlay.classList.remove('active');
+    }
+
+    function viewResume() {
+        window.open('Mohd Saif Khan-Resume.pdf', '_blank');
+        closeResumePrompt();
+    }
+
+    function downloadResume() {
+        const link = document.createElement('a');
+        link.href = 'Mohd Saif Khan-Resume.pdf';
+        link.download = 'Mohd Saif Khan-Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        closeResumePrompt();
+    }
+
+    if (resumePromptClose) resumePromptClose.addEventListener('click', closeResumePrompt);
+    if (resumeViewBtn) resumeViewBtn.addEventListener('click', viewResume);
+    if (resumeDownloadBtn) resumeDownloadBtn.addEventListener('click', downloadResume);
+    if (resumePromptOverlay) {
+        resumePromptOverlay.addEventListener('click', function(e) {
+            if (e.target === resumePromptOverlay) closeResumePrompt();
+        });
+    }
+
+    // Modal functionality
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    const modalIcon = document.getElementById('modalIcon');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMessage = document.getElementById('modalMessage');
+    const modalTimer = document.getElementById('modalTimer');
+    const modalProgress = document.getElementById('modalProgress');
+    const modalOkBtn = document.getElementById('modalOkBtn');
+    const modalCancelBtn = document.getElementById('modalCancelBtn');
+
+    let timerInterval;
+    let secondsElapsed = 0;
+    const maxWaitTime = 120;
+    let autoCloseTimeout;
+
+    function showModal() {
+        if (!modalOverlay) return;
+        modalOverlay.classList.add('active');
+        secondsElapsed = 0;
+        if (modalTimer) modalTimer.textContent = `Time elapsed: 0s`;
+        if (modalProgress) modalProgress.style.width = '0%';
+        if (modalIcon) modalIcon.className = 'bx bx-time';
+        if (modalTitle) modalTitle.textContent = 'Sending Your Message';
+        if (modalMessage) modalMessage.textContent = "Please wait while we process your request. This may take up to 2 minutes because we are using a free hosting server, which is why it takes longer.";
+        if (modalOkBtn) modalOkBtn.style.display = 'none';
+        if (modalCancelBtn) modalCancelBtn.style.display = 'block';
+        clearInterval(timerInterval);
+        timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function hideModal() {
+        if (modalOverlay) modalOverlay.classList.remove('active');
+        clearInterval(timerInterval);
+        clearTimeout(autoCloseTimeout);
+    }
+
+    function updateTimer() {
+        secondsElapsed++;
+        if (modalTimer) modalTimer.textContent = `Time elapsed: ${secondsElapsed}s`;
+        const progressPercent = (secondsElapsed / maxWaitTime) * 100;
+        if (modalProgress) modalProgress.style.width = `${Math.min(progressPercent, 100)}%`;
+        if (secondsElapsed >= maxWaitTime) {
+            clearInterval(timerInterval);
+            if (modalIcon) modalIcon.className = 'bx bx-error';
+            if (modalTitle) modalTitle.textContent = 'Server Timeout';
+            if (modalMessage) modalMessage.textContent = 'The server is taking longer than expected to respond. Please try again in a few moments.';
+            if (modalOkBtn) modalOkBtn.style.display = 'block';
+            if (modalCancelBtn) modalCancelBtn.style.display = 'none';
         }
+    }
 
-        // Contact form submission
-        const form = document.getElementById("contactForm");
-        form.addEventListener("submit", async (e) => {
+    function showSuccessModal(message) {
+        clearInterval(timerInterval);
+        if (modalIcon) modalIcon.className = 'bx bx-check-circle';
+        if (modalTitle) modalTitle.textContent = 'Message Sent Successfully!';
+        if (modalMessage) modalMessage.textContent = message;
+        if (modalProgress) modalProgress.style.width = '100%';
+        if (modalOkBtn) modalOkBtn.style.display = 'block';
+        if (modalCancelBtn) modalCancelBtn.style.display = 'none';
+        autoCloseTimeout = setTimeout(hideModal, 3000);
+    }
+
+    function showErrorModal(message) {
+        clearInterval(timerInterval);
+        if (modalIcon) modalIcon.className = 'bx bx-error';
+        if (modalTitle) modalTitle.textContent = 'Error Sending Message';
+        if (modalMessage) modalMessage.textContent = message;
+        if (modalOkBtn) modalOkBtn.style.display = 'block';
+        if (modalCancelBtn) modalCancelBtn.style.display = 'none';
+        autoCloseTimeout = setTimeout(hideModal, 5000);
+    }
+
+    if (modalClose) modalClose.addEventListener('click', hideModal);
+    if (modalOkBtn) modalOkBtn.addEventListener('click', hideModal);
+    if (modalCancelBtn) modalCancelBtn.addEventListener('click', hideModal);
+
+    // Theme Toggle
+    window.toggleTheme = function() {
+        const body = document.body;
+        const themeIcon = document.getElementById('theme-icon');
+        if (body.getAttribute('data-theme') === 'light') {
+            body.setAttribute('data-theme', 'dark');
+            if (themeIcon) themeIcon.className = 'bx bx-sun';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.setAttribute('data-theme', 'light');
+            if (themeIcon) themeIcon.className = 'bx bx-moon';
+            localStorage.setItem('theme', 'light');
+        }
+    };
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+    const themeIcon = document.getElementById('theme-icon');
+    if (themeIcon) themeIcon.className = savedTheme === 'dark' ? 'bx bx-sun' : 'bx bx-moon';
+
+    // Generate all content
+    generateTimelineEntries(experienceData, 'experience-timeline');
+    generateTimelineEntries(educationData, 'education-timeline');
+    generateProjectCards();
+    initializeCarousel();
+
+    // Mobile Navigation
+    const navBtn = document.getElementById('nav-btn');
+    const navLinks = document.getElementById('nav-links');
+    if (navBtn && navLinks) {
+        navBtn.addEventListener('click', function() { navLinks.classList.toggle('open'); });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() { navLinks.classList.remove('open'); });
+        });
+    }
+
+    // Active navigation highlighting
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        const navLinkElements = document.querySelectorAll('.nav-links a');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= (sectionTop - 200)) current = section.getAttribute('id');
+        });
+        navLinkElements.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+        });
+    });
+
+    // Back to Top
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+            backToTopBtn.classList.toggle('show', window.scrollY > 300);
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // Typed text effect
+    const roles = ['Full Stack Developer', 'MERN Stack Developer', 'Backend Developer', 'Frontend Developer', 'Node.js Developer', 'React Developer'];
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
+    const typedElement = document.getElementById('typed-role');
+
+    function typeRole() {
+        if (!typedElement) return;
+        const currentRole = roles[roleIndex];
+        if (isDeleting) {
+            typedElement.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedElement.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+        }
+        let typeSpeed = isDeleting ? 50 : 100;
+        if (!isDeleting && charIndex === currentRole.length) {
+            typeSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500;
+        }
+        setTimeout(typeRole, typeSpeed);
+    }
+    setTimeout(typeRole, 1000);
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Show the modal
-            showModal();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
 
+    // Contact form submission
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            showModal();
             const formData = {
                 name: form.name.value,
                 email: form.email.value,
                 subject: form.subject.value,
                 message: form.message.value
             };
-            
-
             try {
-                // const res = await fetch("https://msaifkhan01-github-io.onrender.com/send-email", {
-                //    const res = await fetch("http://localhost:5000/send-email", {
                 const res = await fetch("https://m-saif-khan01-github-io.vercel.app/send-email", {
-
-                method: "POST",
+                    method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(formData)
                 });
-console.log("=====res====",res)
                 const data = await res.json();
                 if (res.ok) {
                     showSuccessModal(data.message);
@@ -2647,30 +2569,26 @@ console.log("=====res====",res)
                 showErrorModal("Error sending message! Please try again later.");
             }
         });
+    }
 
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections and cards
-        document.querySelectorAll('section, .timeline-entry, .project-card, .skill-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
+    // Scroll animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
         });
-    </script>
-</body>
+    }, observerOptions);
+    document.querySelectorAll('section, .timeline-entry, .project-card, .skill-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+    });
+
+});
+</script>
 
 </html>
