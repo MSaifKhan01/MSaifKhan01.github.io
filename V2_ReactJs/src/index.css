@@ -147,13 +147,22 @@ body {
   transition: background 0.3s ease;
 }
 
-.nav-inner {
+/* .nav-inner {
   max-width: 1150px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 12px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+} */
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the whole cluster */
+  gap: 32px; /* Exact uniform spacing between Logo, Links, and Resume */
 }
 
 .nav-logo {
@@ -162,16 +171,84 @@ body {
   font-weight: 700;
   text-decoration: none;
   letter-spacing: -0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 0; /* Clear all margins */
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove any auto margins or custom spacing on the items */
+.nav-menu li {
+  margin: 0 !important;
+}
+
+/* Treat the last li (Resume) as having an identical separation gap */
+.nav-menu li:last-child {
+  margin-left: 26px !important; /* Matches gap from Contact to Resume with Logo to Home */
 }
 
 .nav-item-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 25px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.nav-resume-btn {
+  padding: 8px 22px;
+  border-radius: 25px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  margin: 0;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.nav-burger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--secondary);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Mobile & Tablet */
+@media (max-width: 900px) {
+  .nav-inner {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-burger-btn {
+    display: block;
+  }
+}
+
+
+/* .nav-item-link {
   color: var(--text-primary);
   text-decoration: none;
   padding: 8px 18px;
@@ -180,7 +257,7 @@ body {
   font-weight: 600;
   transition: all 0.25s ease;
   display: inline-block;
-}
+} */
 
 .nav-item-link:hover,
 .nav-item-link.active {
@@ -218,11 +295,12 @@ body {
 
 /* Hero Section */
 .hero-wrapper {
-  padding: 60px 0 50px;
+  padding: 04px 0 50px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .hero-heading {

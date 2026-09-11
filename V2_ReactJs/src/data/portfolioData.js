@@ -6,14 +6,22 @@ export const experienceData = [
     location: "Gurgaon, Haryana",
     companyUrl: "https://labryssolutions.com/",
     description: "Working as a Full Stack Developer at Labrys Solutions and internally transferred to Lapulse Innovations LLP (Dec 2025). Developing IoT-based Energy Management Systems (EMS), enterprise web applications, and payment gateway solutions using React.js, Node.js, MongoDB, MySQL, and Prisma.",
+    // achievements: [
+    //   "Working as a Full Stack Developer at Labrys Solutions and internally transferred to Lapulse Innovations LLP (Dec 2025) And Developed scalable full-stack applications using React.js, Node.js, Express.js, MongoDB, MySQL, and Prisma.",
+    //   {
+    //     text: "EMS Dashboard",
+    //     // link: "https://soodprints.in/ems/",
+    //       link: "https://ems.smartlynk.net/",
+    //     description: "Built an IoT-based Energy Management System (EMS) for real-time smart meter monitoring, energy usage tracking, recharge management, usage history, and meter administration."
+    //   },
     achievements: [
-      "Working as a Full Stack Developer at Labrys Solutions and internally transferred to Lapulse Innovations LLP (Dec 2025) And Developed scalable full-stack applications using React.js, Node.js, Express.js, MongoDB, MySQL, and Prisma.",
+      "Working as a Full Stack Developer at Labrys Solutions and internally transferred to Lapulse Innovations LLP (Dec 2025) and developed scalable full-stack applications using React.js, Node.js, Express.js, MongoDB, MySQL, and Prisma.",
       {
-        text: "EMS Dashboard",
-        // link: "https://soodprints.in/ems/",
-          link: "https://ems.smartlynk.net/",
-        description: "Built an IoT-based Energy Management System (EMS) for real-time smart meter monitoring, energy usage tracking, recharge management, usage history, and meter administration."
+        text: "EMS & Smartlynk IoT Solutions",
+        link: "https://smartlynk.net/",
+        description: "Designed and developed scalable full-stack applications using React.js, Node.js, Express.js, MongoDB, MySQL, and Prisma. Delivered IoT-based EMS solutions for real-time smart meter monitoring, energy usage tracking, recharge management, and operational analytics. "
       },
+
       {
         text: "LeaguePoolStats",
         link: "https://leaguepoolstats.com/",
@@ -31,7 +39,7 @@ export const experienceData = [
   },
   {
     date: "Sep 2024 – Apr 2025",
-    role: "Software Development Engineer",
+    role: "Software Development Engineer Inturn",
     company: "DigiCraft Pvt Ltd",
     location: "Delhi (Hybrid)",
     companyUrl: "https://digicraft.ai/",
@@ -42,8 +50,12 @@ export const experienceData = [
       "Set up complete ONDC protocol integration from scratch—built the buyer application with request/response signing, encryption, and payload validation as per ONDC specifications, while exploring seller-side implementation when no codebase existed"
     ],
     technologies: ["NestJS", "Docker", "MongoDB", "Elasticsearch", "ONDC", "Microservices"],
-    actions: [
-      { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1ULYkRzzmVeQ90Gx3Sy1kOVGuW-bnvE3z/view?usp=sharing", secondary: true }
+    // actions: [
+    //   { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1ULYkRzzmVeQ90Gx3Sy1kOVGuW-bnvE3z/view?usp=sharing", secondary: true }
+    // ]
+
+        actions: [
+      { text: "Certificate", icon: "bx-certificate", href: "https://drive.google.com/file/d/1iqXOdGc7zqCGxwRLuEYb0nJaeQa2_glN/view?usp=sharing", secondary: true }
     ]
   },
   {
@@ -220,5 +232,6 @@ export const skillsData = [
   { name: "Redis", icon: "https://www.vectorlogo.zone/logos/redis/redis-ar21.svg" },
   { name: "NestJS", icon: "https://www.vectorlogo.zone/logos/nestjs/nestjs-icon.svg" },
   { name: "MySQL", icon: "https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg" },
-  { name: "Elasticsearch", icon: "https://www.vectorlogo.zone/logos/elastic/elastic-ar21.svg" }
+  { name: "Elasticsearch", icon: "https://www.vectorlogo.zone/logos/elastic/elastic-ar21.svg" },
+{ name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }
 ];

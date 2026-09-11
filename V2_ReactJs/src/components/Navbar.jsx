@@ -11,7 +11,8 @@ export const Navbar = ({ onOpenResume }) => {
     { label: 'Experience', href: '#experience' },
     { label: 'Education', href: '#education' },
     { label: 'Projects', href: '#projects' },
-    { label: 'GitHub', href: '#github' },
+    { label: 'GitHub & NPM', href: '#github' },
+    // { label: 'NPM', href: '#npm' },
     { label: 'Skills', href: '#skills' },
     { label: 'Contact', href: '#contact' },
   ];

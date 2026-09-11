@@ -56,7 +56,7 @@ export const Hero = ({ onOpenResume }) => {
       </div>
 
       <p className="hero-paragraph">
-        Full Stack Developer specializing in scalable web & backend APIs, and intuitive user interfaces. Skilled in
+        Full Stack Developer with over 1.5 years of hands-on experience specializing in scalable web & backend APIs, and intuitive user interfaces. Skilled in
         Node.js, React, MongoDB, and Python. Eager to build high-impact products!
       </p>
 
