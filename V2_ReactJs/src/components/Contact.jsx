@@ -76,10 +76,36 @@ export const Contact = ({ onStartSubmission, onSubmissionComplete, onSubmissionE
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <i className="bx bx-phone" style={{ fontSize: '1.4rem', color: 'var(--accent)' }} />
-            <div>
+            {/* <div>
               <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', display: 'block' }}>Phone:</span>
               <span style={{ color: 'var(--text-secondary)' }}>+91 9315718415</span>
+            </div> */}
+            {/* Direct Phone Call Link */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            
+            <div>
+              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', display: 'block' }}>Phone:</span>
+              <a href="tel:+919315718415" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+                +91 9315718415
+              </a>
             </div>
+          </div>
+
+          {/* WhatsApp Direct Chat Link */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <i className="bx bxl-whatsapp" style={{ fontSize: '1.4rem', color: 'var(--accent)' }} />
+            <div>
+              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', display: 'block' }}>WhatsApp:</span>
+              <a 
+                href="https://wa.me/919315718415" 
+                target="_blank" 
+                rel="noreferrer" 
+                style={{ color: 'var(--secondary)', textDecoration: 'none', fontWeight: 500 }}
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <i className="bx bx-map" style={{ fontSize: '1.4rem', color: 'var(--accent)' }} />
