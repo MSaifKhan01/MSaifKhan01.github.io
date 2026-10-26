@@ -55,10 +55,16 @@ export const Hero = ({ onOpenResume }) => {
         <span style={{ animation: 'blink 1s infinite' }}>|</span>
       </div>
 
-      <p className="hero-paragraph">
-        Full Stack Developer with over 1.5 years of hands-on experience specializing in scalable web & backend APIs, and intuitive user interfaces. Skilled in
+      {/* <p className="hero-paragraph">
+        Full Stack Developer with <strong>over 2 years </strong> of hands-on experience specializing in scalable web & backend APIs, and intuitive user interfaces. Skilled in
         Node.js, React, MongoDB, and Python. Eager to build high-impact products!
-      </p>
+      </p> */}
+
+      
+
+<p className="hero-paragraph">
+  <strong>Full Stack Developer</strong> with <strong>over 2 years</strong> of hands-on experience specializing in scalable web &amp; backend APIs and intuitive user interfaces. Skilled in <strong>Node.js, React, MongoDB, and Python</strong>. Eager to build high-impact products!
+</p>
 
       <div className="hero-actions">
         <a href="#contact" className="btn-primary">
